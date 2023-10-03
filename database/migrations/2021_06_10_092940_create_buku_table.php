@@ -16,13 +16,24 @@ class CreateBukuTable extends Migration
         Schema::create('buku', function (Blueprint $table) {
             $table->id();
             $table->string('judul');
+            $table->date('tanggal');
             $table->string('slug');
             $table->string('sampul');
             $table->string('penulis');
+            $table->string('penerbit');
+            $table->string('tahun_terbit');
+            $table->string('tempat_terbit');
+            $table->integer('no_inventaris');
+            $table->string('keterangan');
             $table->foreignId('penerbit_id');
             $table->foreignId('kategori_id');
             $table->foreignId('rak_id');
             $table->integer('stok');
+            $table->integer('halaman');
+            $table->integer('tinggi');
+            $table->string('ddc');
+            $table->string('isbn');
+            $table->string('penerbit');
             $table->timestamps();
         });
     }
