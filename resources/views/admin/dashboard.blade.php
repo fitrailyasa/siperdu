@@ -8,9 +8,9 @@
             <!-- small box -->
             <div class="small-box bg-info">
                 <div class="inner">
-                    <h3>{{ $menara }}</h3>
+                    <h3></h3>
 
-                    <p>Menara</p>
+                    <p></p>
                 </div>
                 <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
@@ -20,9 +20,9 @@
             <!-- small box -->
             <div class="small-box bg-success">
                 <div class="inner">
-                    <h3>{{ $permohonan }}</h3>
+                    <h3></h3>
 
-                    <p>Permohonan</p>
+                    <p></p>
                 </div>
                 <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
@@ -32,9 +32,9 @@
             <!-- small box -->
             <div class="small-box bg-warning">
                 <div class="inner">
-                    <h3>{{ $user_acc }}</h3>
+                    <h3></h3>
 
-                    <p>User diverifikasi</p>
+                    <p></p>
                 </div>
                 <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
@@ -44,9 +44,9 @@
             <!-- small box -->
             <div class="small-box bg-danger">
                 <div class="inner">
-                    <h3>{{ $user_verif }}</h3>
+                    <h3></h3>
 
-                    <p>User belum diverifikasi</p>
+                    <p></p>
                 </div>
                 <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>

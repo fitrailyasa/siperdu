@@ -1,6 +1,12 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\Auth\LoginController;
+use App\Http\Middleware\Admin;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\Admin\AdminDashboardController;
+use App\Http\Controllers\Admin\AdminUserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +19,21 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', [HomeController::class, 'index'])->name('beranda');
+
+Auth::routes();
+
+Route::middleware(['auth'])->group(function () {
+
+  Route::get('/dashboard', [AdminDashboardController::class, 'index'])->name('dashboard');
+  Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
+  Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
+
+  // CMS ADMINITRASTOR
+  Route::middleware([Admin::class])->name('admin.')->prefix('admin')->group(function () {
+      Route::get('/', [HomeController::class, 'index'])->name('beranda');
+      Route::get('/dashboard', [AdminDashboardController::class, 'index'])->name('dashboard');
+      Route::resource('user', AdminUserController::class);
+    });
+  
 });
