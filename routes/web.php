@@ -20,6 +20,8 @@ use App\Http\Controllers\Admin\AdminUserController;
 */
 
 Route::get('/', [HomeController::class, 'index'])->name('beranda');
+Route::get('/visi-misi', function () {return view('client.visi-misi');});
+Route::get('/kontak', function () {return view('client.kontak');});
 
 Auth::routes();
 
