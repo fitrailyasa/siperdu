@@ -1,8 +1,8 @@
 @extends('layouts.client.app')
 
-@section('title', 'Beranda')
+@section('title', 'Kontak')
 
-<h1>Ini Halaman Beranda</h1>
+<h1>Ini Halaman Kontak</h1>
 
 @section('content')
 
