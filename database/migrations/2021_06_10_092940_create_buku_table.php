@@ -33,7 +33,6 @@ class CreateBukuTable extends Migration
             $table->integer('tinggi');
             $table->string('ddc');
             $table->string('isbn');
-            $table->string('penerbit');
             $table->timestamps();
         });
     }
