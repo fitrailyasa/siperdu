@@ -20,10 +20,10 @@ class CreateBukuTable extends Migration
             $table->string('slug');
             $table->string('sampul');
             $table->string('penulis');
-            $table->string('penerbit');
             $table->string('tahun_terbit');
             $table->string('tempat_terbit');
             $table->integer('no_inventaris');
+            $table->string('sumber_buku');
             $table->string('keterangan');
             $table->foreignId('penerbit_id');
             $table->foreignId('kategori_id');
