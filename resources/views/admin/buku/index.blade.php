@@ -29,6 +29,8 @@
                                     @if (auth()->user()->roles_id == 1)
                                         <a href="{{ route('admin.buku.show', $buku->id) }}"
                                             class="btn-sm btn-success">Detail</a>
+                                        <a href="{{ route('admin.buku.edit', $buku->id) }}"
+                                            class="btn-sm btn-warning">Edit</a>
                                         <!-- Button trigger modal -->
                                         <a role="button" class="btn-sm btn-danger delete-button" data-bs-toggle="modal"
                                             data-bs-target=".bd-example-modal-sm{{ $buku->id }}">

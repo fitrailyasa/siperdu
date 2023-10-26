@@ -1,6 +1,6 @@
 @extends('layouts.admin.app')
 
-@section('title', 'Detail User')
+@section('title', 'Detail Anggota')
 
 @section('backlink')
     @if (auth()->user()->roles_id == 1)

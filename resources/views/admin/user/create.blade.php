@@ -1,6 +1,6 @@
 @extends('layouts.admin.app')
 
-@section('title', 'Tambah User')
+@section('title', 'Tambah Anggota')
 
 @section('backlink')
     @if (auth()->user()->roles_id == 1)
@@ -59,14 +59,13 @@
                     </div>
                 </div>
                 <div class="mb-3 row">
-                    <label class="col-sm-3 col-form-label">Roles ID</label>
+                    <label class="col-sm-3 col-form-label">Role</label>
                     <div class="col-sm-9">
                         <select class="col-sm-12 col-form-label rounded-2" name="roles_id" id="roles_id" required>
-                            @if (auth()->user()->roles_id == 1)
+                            {{-- @if (auth()->user()->roles_id == 1)
                                 <option selected value="1">Admin</option>
-                            @endif
-                            <option value="3">Member</option>
-                            <option value="99">Guest</option>
+                            @endif --}}
+                            <option value="3">Anggota</option>
                         </select>
                     </div>
                 </div>
