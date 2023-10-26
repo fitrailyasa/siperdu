@@ -5,25 +5,24 @@
 @section('content')
     <div class="vh-100 justify-content-center d-flex mb-4 mt-0">
         <div class="d-flex justify-content-center align-items-center flex-column">
-            <img src="../assets/img/main-logo.png" style="width: 20rem;" alt="">
+            {{-- <img src="../assets/img/main-logo.png" style="width: 20rem;" alt=""> --}}
 
             <form action="{{ route('login') }}" method="POST"
                 class="d-flex flex-column gap-3 justify-content-center align-items-center w-100">
                 @csrf
                 <input class="border-0 rounded-3 py-2 px-3 w-75 @error('email') is-invalid @enderror" name="email"
-                    value="{{ old('email') }}" required autofocus type="text" name="email" id="email"
+                    value="admin@admin.com" required autofocus type="text" name="email" id="email"
                     placeholder="email">
                 @error('email')
                     <div class="alert alert-danger">{{ $message }}</div>
                 @enderror
                 <input class="border-0 rounded-3 py-2 px-3 w-75 @error('password') is-invalid @enderror" name="password"
-                    required type="password" id="password" placeholder="password">
+                    value="password" required type="password" id="password" placeholder="password">
                 @error('password')
                     <div class="alert alert-danger">{{ $message }}</div>
                 @enderror
                 <button type="submit" class="btn w-25 my-3 bg-primary text-white">Masuk</button>
             </form>
-            <p>Belum punya akun? <a class="" href="{{ route('register') }}">Daftar</a></p>
         </div>
     </div>
 

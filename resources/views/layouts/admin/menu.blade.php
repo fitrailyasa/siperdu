@@ -11,18 +11,18 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a href="{{ route('beranda') }}" class="nav-link text-white">
+                <a href="{{ route('dashboard') }}" class="nav-link text-white">
                     <i class="nav-icon fas fa-home"></i>
                     <p>
                         Beranda
                     </p>
                 </a>
             </li>
-            {{-- <li class="nav-item">
+            <li class="nav-item">
                 <a href="#" class="nav-link text-white">
-                    <i class="nav-icon fas fa-user"></i>
+                    <i class="nav-icon fas fa-users"></i>
                     <p>
-                        Data User
+                        Data Anggota
                         <i class="fas fa-angle-left right"></i>
                     </p>
                 </a>
@@ -30,17 +30,76 @@
                     <li class="nav-item">
                         <a href="{{ route('admin.user.index') }}" class="nav-link text-grey">
                             <i class="far fa-circle nav-icon"></i>
-                            <p>Kelola Data User</p>
+                            <p>Kelola Data Anggota</p>
                         </a>
                     </li>
                     <li class="nav-item">
                         <a href="{{ route('admin.user.create') }}" class="nav-link text-grey">
                             <i class="far fa-circle nav-icon"></i>
-                            <p>Tambah Data User</p>
+                            <p>Tambah Data Anggota</p>
                         </a>
                     </li>
                 </ul>
-            </li> --}}
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link text-white">
+                    <i class="nav-icon fas fa-book"></i>
+                    <p>
+                        Pendataan Buku
+                        <i class="fas fa-angle-left right"></i>
+                    </p>
+                </a>
+                <ul class="nav nav-treeview">
+                    <li class="nav-item">
+                        <a href="{{ route('admin.buku.index') }}" class="nav-link text-grey">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>Kelola Kategori</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ route('admin.buku.index') }}" class="nav-link text-grey">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>Kelola Rak</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ route('admin.buku.index') }}" class="nav-link text-grey">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>Kelola Penerbit</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ route('admin.buku.index') }}" class="nav-link text-grey">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>Kelola Buku</p>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="nav-item">
+                <a href="{{ route('dashboard') }}" class="nav-link text-white">
+                    <i class="nav-icon fas fa-exchange"></i>
+                    <p>
+                        Transaksi Buku
+                    </p>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="{{ route('dashboard') }}" class="nav-link text-white">
+                    <i class="nav-icon fas fa-id-card"></i>
+                    <p>
+                        Kartu Perpustakaan
+                    </p>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="{{ route('dashboard') }}" class="nav-link text-white">
+                    <i class="nav-icon fa fa-building-o"></i>
+                    <p>
+                        Struktur Organisasi
+                    </p>
+                </a>
+            </li>
             <li class="nav-item">
                 <form id="logout-form" action="{{ route('logout') }}" method="POST" hidden>
                     @csrf
