@@ -2,8 +2,8 @@
 
 @section('title', 'Koleksi Buku')
 
-<h1>Ini Halaman Koleksi Buku</h1>
-
 @section('content')
+
+    <h1>Ini Halaman Koleksi Buku</h1>
 
 @endsection
