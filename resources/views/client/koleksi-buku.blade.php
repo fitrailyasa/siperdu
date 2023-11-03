@@ -2,8 +2,12 @@
 
 @section('title', 'Koleksi Buku')
 
+@section('textCollection', 'text-success')
+
 @section('content')
 
-    <h1>Ini Halaman Koleksi Buku</h1>
+    <div class="text-center my-3">
+        <img class="img img-fluid rounded" src="{{ asset('assets/images/collection.png') }}" width="1150" alt="collection">
+    </div>
 
 @endsection

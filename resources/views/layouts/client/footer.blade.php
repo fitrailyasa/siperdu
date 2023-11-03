@@ -1,6 +1,7 @@
 <footer class="bg-dark text-light">
     <div class="d-flex align-items-center p-4">
-        <img class="m-3" src="{{ asset('assets/images/logo.png') }}" width="150" height="150" alt="Logo">
+        <img class="m-3 img img-fluid" src="{{ asset('assets/images/logo.png') }}" width="150" height="150"
+            alt="Logo">
         <div>
             <p class="mb-2">MTs Negeri 2 Bandar Lampung</p>
             <p class="mb-2">PERPUSTAKAAN AL KINDI</p>
