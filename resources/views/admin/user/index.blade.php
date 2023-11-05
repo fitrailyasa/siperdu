@@ -2,6 +2,9 @@
 
 @section('title', 'Kelola Anggota')
 
+@section('dataUser', 'active')
+@section('kelolaUser', 'active')
+
 @section('content')
 
     <div class="card">

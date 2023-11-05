@@ -2,6 +2,9 @@
 
 @section('title', 'Tambah Rak')
 
+@section('dataBuku', 'active')
+@section('kelolaRak', 'active')
+
 @section('backlink')
     @if (auth()->user()->roles_id == 1)
         <a href="{{ route('admin.rak.index') }}"><i class="fa small pr-1 fa-arrow-left text-dark"></i></a>

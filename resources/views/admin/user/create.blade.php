@@ -2,6 +2,9 @@
 
 @section('title', 'Tambah Anggota')
 
+@section('dataUser', 'active')
+@section('tambahUser', 'active')
+
 @section('backlink')
     @if (auth()->user()->roles_id == 1)
         <a href="{{ route('admin.user.index') }}"><i class="fa small pr-1 fa-arrow-left text-dark"></i></a>

@@ -2,6 +2,9 @@
 
 @section('title', 'Kelola Penerbit')
 
+@section('dataBuku', 'active')
+@section('kelolaPenerbit', 'active')
+
 @section('content')
 
     <div class="card">

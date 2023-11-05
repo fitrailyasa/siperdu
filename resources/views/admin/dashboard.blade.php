@@ -2,6 +2,8 @@
 
 @section('title', 'Dashboard')
 
+@section('activeDashboard', 'active')
+
 @section('content')
     <div class="row">
         <div class="col-lg-3 col-6">

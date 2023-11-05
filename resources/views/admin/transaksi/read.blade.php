@@ -2,6 +2,8 @@
 
 @section('title', 'Detail Transaksi')
 
+@section('dataTransaksi', 'active')
+
 @section('backlink')
     @if (auth()->user()->roles_id == 1)
         <a href="{{ route('admin.transaksi.index') }}"><i class="fa small pr-1 fa-arrow-left text-dark"></i></a>

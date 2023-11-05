@@ -2,6 +2,9 @@
 
 @section('title', 'Tambah Buku')
 
+@section('dataBuku', 'active')
+@section('kelolaBuku', 'active')
+
 @section('backlink')
     @if (auth()->user()->roles_id == 1)
         <a href="{{ route('admin.buku.index') }}"><i class="fa small pr-1 fa-arrow-left text-dark"></i></a>

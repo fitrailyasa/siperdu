@@ -2,6 +2,8 @@
 
 @section('title', 'Kelola Transaksi')
 
+@section('dataTransaksi', 'active')
+
 @section('content')
 
     <div class="card">

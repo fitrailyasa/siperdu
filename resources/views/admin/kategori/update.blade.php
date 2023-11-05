@@ -2,6 +2,9 @@
 
 @section('title', 'Edit Kategori')
 
+@section('dataBuku', 'active')
+@section('kelolaKategori', 'active')
+
 @section('backlink')
     @if (auth()->user()->roles_id == 1)
         <a href="{{ route('admin.kategori.index') }}"><i class="fa small pr-1 fa-arrow-left text-dark"></i></a>
