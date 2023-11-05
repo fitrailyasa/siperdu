@@ -8,6 +8,10 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Admin\AdminDashboardController;
 use App\Http\Controllers\Admin\AdminUserController;
 use App\Http\Controllers\Admin\AdminBukuController;
+use App\Http\Controllers\Admin\AdminKategoriController;
+use App\Http\Controllers\Admin\AdminPenerbitController;
+use App\Http\Controllers\Admin\AdminRakController;
+use App\Http\Controllers\Admin\AdminTransaksiController;
 use App\Http\Controllers\Client\KoleksiController;
 
 /*
@@ -22,8 +26,9 @@ use App\Http\Controllers\Client\KoleksiController;
 */
 
 Route::get('/', [HomeController::class, 'index'])->name('beranda');
-Route::get('/visi-misi', function () {return view('client.visi-misi');});
+
 Route::get('/kontak', function () {return view('client.kontak');})->name('kontak');
+
 Route::get('/koleksi-buku', [KoleksiController::class, 'index'])->name('koleksi-buku');
 
 Auth::routes();
@@ -40,6 +45,10 @@ Route::middleware(['auth'])->group(function () {
       Route::get('/dashboard', [AdminDashboardController::class, 'index'])->name('dashboard');
       Route::resource('user', AdminUserController::class);
       Route::resource('buku', AdminBukuController::class);
+      Route::resource('kategori', AdminKategoriController::class);
+      Route::resource('penerbit', AdminPenerbitController::class);
+      Route::resource('rak', AdminRakController::class);
+      Route::resource('transaksi', AdminTransaksiController::class);
     });
   
 });

@@ -7,6 +7,11 @@
     <div class="card">
         <!-- /.card-header -->
         <div class="card-body">
+            <div class="d-flex justify-content-between mb-3">
+                <h3 class="card-title">Tabel Data Buku</h3>
+                <a href="{{ route('admin.buku.create') }}" class="btn-sm btn-success">Tambah
+                    Buku</a>
+            </div>
             <div class="table-responsive">
                 <table id="example1" class="table table-bordered table-striped">
                     <thead>
@@ -90,7 +95,7 @@
                 "responsive": true,
                 "lengthChange": false,
                 "autoWidth": false,
-                "buttons": ["csv", "excel", "pdf", "print"]
+                "buttons": ["excel", "pdf", "print"]
             }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
             $('#example2').DataTable({
                 "paging": true,

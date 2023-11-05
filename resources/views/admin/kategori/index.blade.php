@@ -1,43 +1,46 @@
 @extends('layouts.admin.app')
 
-@section('title', 'Kelola Anggota')
+@section('title', 'Kelola Kategori')
 
 @section('content')
 
     <div class="card">
         <!-- /.card-header -->
         <div class="card-body">
+            <div class="d-flex justify-content-between mb-3">
+                <h3 class="card-title">Tabel Data Kategori</h3>
+                <a href="{{ route('admin.kategori.create') }}" class="btn-sm btn-success">Tambah
+                    Kategori</a>
+            </div>
             <div class="table-responsive">
                 <table id="example1" class="table table-bordered table-striped">
                     <thead>
                         <tr>
                             <th>No</th>
                             <th>Nama</th>
-                            <th>Email</th>
-                            <th>Role</th>
+                            <th>Slug</th>
                             <th>More</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($users as $user)
+                        @foreach ($kategoris as $kategori)
                             <tr>
                                 <td>{{ $loop->iteration }}</td>
-                                <td>{{ $user->nama }}</td>
-                                <td>{{ $user->email }}</td>
-                                <td>{{ $user->roles->nama_roles }}</td>
+                                <td>{{ $kategori->nama }}</td>
+                                <td>{{ $kategori->slug }}</td>
                                 <td class="manage-row">
                                     @if (auth()->user()->roles_id == 1)
-                                        <a href="{{ route('admin.user.show', $user->id) }}"
+                                        <a href="{{ route('admin.kategori.show', $kategori->id) }}"
                                             class="btn-sm btn-success">Detail</a>
-                                        <a href="{{ route('admin.user.edit', $user->id) }}"
+                                        <a href="{{ route('admin.kategori.edit', $kategori->id) }}"
                                             class="btn-sm btn-warning">Edit</a>
                                         <!-- Button trigger modal -->
                                         <a role="button" class="btn-sm btn-danger delete-button" data-bs-toggle="modal"
-                                            data-bs-target=".bd-example-modal-sm{{ $user->id }}">
+                                            data-bs-target=".bd-example-modal-sm{{ $kategori->id }}">
                                             Hapus
                                         </a>
                                         <!-- Modal -->
-                                        <div class="modal fade bd-example-modal-sm{{ $user->id }}" tabindex="-1"
+                                        <div class="modal fade bd-example-modal-sm{{ $kategori->id }}" tabindex="-1"
                                             role="dialog" aria-hidden="">
                                             <div class="modal-dialog ">
                                                 <div class="modal-content">
@@ -48,7 +51,7 @@
                                                     </div>
                                                     <div class="modal-body">Apakah anda yakin ingin menghapus data?</div>
                                                     <div class="modal-footer">
-                                                        <form action="{{ route('admin.user.destroy', $user->id) }}"
+                                                        <form action="{{ route('admin.kategori.destroy', $kategori->id) }}"
                                                             method="POST">
                                                             @method('DELETE')
                                                             @csrf
@@ -70,8 +73,7 @@
                         <tr>
                             <th>No</th>
                             <th>Nama</th>
-                            <th>Email</th>
-                            <th>Role</th>
+                            <th>Slug</th>
                             <th>More</th>
                         </tr>
                     </tfoot>

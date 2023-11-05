@@ -11,7 +11,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a href="{{ route('dashboard') }}" class="nav-link text-white">
+                <a href="{{ route('beranda') }}" class="nav-link text-white">
                     <i class="nav-icon fas fa-home"></i>
                     <p>
                         Beranda
@@ -51,19 +51,19 @@
                 </a>
                 <ul class="nav nav-treeview">
                     <li class="nav-item">
-                        <a href="{{ route('admin.buku.index') }}" class="nav-link text-grey">
+                        <a href="{{ route('admin.kategori.index') }}" class="nav-link text-grey">
                             <i class="far fa-circle nav-icon"></i>
                             <p>Kelola Kategori</p>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{ route('admin.buku.index') }}" class="nav-link text-grey">
+                        <a href="{{ route('admin.rak.index') }}" class="nav-link text-grey">
                             <i class="far fa-circle nav-icon"></i>
                             <p>Kelola Rak</p>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{ route('admin.buku.index') }}" class="nav-link text-grey">
+                        <a href="{{ route('admin.penerbit.index') }}" class="nav-link text-grey">
                             <i class="far fa-circle nav-icon"></i>
                             <p>Kelola Penerbit</p>
                         </a>
@@ -77,7 +77,7 @@
                 </ul>
             </li>
             <li class="nav-item">
-                <a href="{{ route('dashboard') }}" class="nav-link text-white">
+                <a href="{{ route('admin.transaksi.index') }}" class="nav-link text-white">
                     <i class="nav-icon fas fa-exchange"></i>
                     <p>
                         Transaksi Buku

@@ -1,43 +1,50 @@
 @extends('layouts.admin.app')
 
-@section('title', 'Kelola Anggota')
+@section('title', 'Kelola Rak')
 
 @section('content')
 
     <div class="card">
         <!-- /.card-header -->
         <div class="card-body">
+            <div class="d-flex justify-content-between mb-3">
+                <h3 class="card-title">Tabel Data Rak</h3>
+                <a href="{{ route('admin.rak.create') }}" class="btn-sm btn-success">Tambah
+                    Rak</a>
+            </div>
             <div class="table-responsive">
                 <table id="example1" class="table table-bordered table-striped">
                     <thead>
                         <tr>
                             <th>No</th>
-                            <th>Nama</th>
-                            <th>Email</th>
-                            <th>Role</th>
+                            <th>Rak</th>
+                            <th>Baris</th>
+                            <th>Kategori</th>
+                            <th>Slug</th>
                             <th>More</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($users as $user)
+                        @foreach ($raks as $rak)
                             <tr>
                                 <td>{{ $loop->iteration }}</td>
-                                <td>{{ $user->nama }}</td>
-                                <td>{{ $user->email }}</td>
-                                <td>{{ $user->roles->nama_roles }}</td>
+                                <td>{{ $rak->rak }}</td>
+                                <td>{{ $rak->baris }}</td>
+                                <td>{{ $rak->kategori->nama }}</td>
+                                <td>{{ $rak->slug }}</td>
                                 <td class="manage-row">
                                     @if (auth()->user()->roles_id == 1)
-                                        <a href="{{ route('admin.user.show', $user->id) }}"
+                                        <a href="{{ route('admin.rak.show', $rak->id) }}"
                                             class="btn-sm btn-success">Detail</a>
-                                        <a href="{{ route('admin.user.edit', $user->id) }}"
+                                        <a href="{{ route('admin.rak.edit', $rak->id) }}"
                                             class="btn-sm btn-warning">Edit</a>
                                         <!-- Button trigger modal -->
                                         <a role="button" class="btn-sm btn-danger delete-button" data-bs-toggle="modal"
-                                            data-bs-target=".bd-example-modal-sm{{ $user->id }}">
+                                            data-bs-target=".bd-example-modal-sm{{ $rak->id }}">
                                             Hapus
                                         </a>
                                         <!-- Modal -->
-                                        <div class="modal fade bd-example-modal-sm{{ $user->id }}" tabindex="-1"
+                                        <div class="modal fade bd-example-modal-sm{{ $rak->id }}" tabindex="-1"
                                             role="dialog" aria-hidden="">
                                             <div class="modal-dialog ">
                                                 <div class="modal-content">
@@ -48,7 +55,7 @@
                                                     </div>
                                                     <div class="modal-body">Apakah anda yakin ingin menghapus data?</div>
                                                     <div class="modal-footer">
-                                                        <form action="{{ route('admin.user.destroy', $user->id) }}"
+                                                        <form action="{{ route('admin.rak.destroy', $rak->id) }}"
                                                             method="POST">
                                                             @method('DELETE')
                                                             @csrf
@@ -69,9 +76,10 @@
                     <tfoot>
                         <tr>
                             <th>No</th>
-                            <th>Nama</th>
-                            <th>Email</th>
-                            <th>Role</th>
+                            <th>Rak</th>
+                            <th>Baris</th>
+                            <th>Kategori</th>
+                            <th>Slug</th>
                             <th>More</th>
                         </tr>
                     </tfoot>
