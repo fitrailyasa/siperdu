@@ -37,7 +37,7 @@
                             </div>
                             <div class="p-3 border-top">
                                 <h4 class="card-title">{{ $buku->judul }}</h4>
-                                <p class="card-text fw-bold">{{ $buku->kategori_id }}</p>
+                                <p class="card-text fw-bold">{{ $buku->kategori->nama }}</p>
                             </div>
                         </div>
                     </div>
@@ -64,7 +64,7 @@
                             </div>
                             <div class="p-3 border-top">
                                 <h4 class="card-title">{{ $buku->judul }}</h4>
-                                <p class="card-text fw-bold">{{ $buku->kategori_id }}</p>
+                                <p class="card-text fw-bold">{{ $buku->kategori->nama }}</p>
                             </div>
                         </div>
                     </div>
@@ -91,7 +91,7 @@
                             </div>
                             <div class="p-3 border-top">
                                 <h4 class="card-title">{{ $buku->judul }}</h4>
-                                <p class="card-text fw-bold">{{ $buku->kategori_id }}</p>
+                                <p class="card-text fw-bold">{{ $buku->kategori->nama }}</p>
                             </div>
                         </div>
                     </div>

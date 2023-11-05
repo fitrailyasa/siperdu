@@ -20,15 +20,7 @@ class RolesSeeder extends Seeder
             ],
             [
                 'id' => 2,
-                'nama_roles' => 'Operator'
-            ],
-            [
-                'id' => 3,
-                'nama_roles' => 'Client'
-            ],
-            [
-                'id' => 99,
-                'nama_roles' => 'Guest'
+                'nama_roles' => 'Anggota'
             ],
         ];
         Role::query()->insert($roles);
