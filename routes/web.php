@@ -31,6 +31,7 @@ Route::get('/', [HomeController::class, 'index'])->name('beranda');
 Route::get('/kontak', function () {return view('client.kontak');})->name('kontak');
 
 Route::get('/koleksi-buku', [KoleksiController::class, 'index'])->name('koleksi-buku');
+Route::get('/detail-buku/{id}', [KoleksiController::class, 'show'])->name('detail-buku');
 
 Auth::routes();
 

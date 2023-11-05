@@ -17,7 +17,7 @@
                 <h4 class="">Address</h4>
             </div>
             <div class="col-md-7">
-                <form action="" method="POST">
+                <form action="#">
                     <div class="mb-3">
                         <label for="nama">Nama : *</label>
                         <input type="text" id="nama" name="nama" class="form-control">
