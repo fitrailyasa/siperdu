@@ -19,7 +19,7 @@ class CreatePeminjamanTable extends Migration
             $table->foreignId('peminjam_id');
             $table->foreignId('petugas_pinjam')->nullable();
             $table->foreignId('petugas_kembali')->nullable();
-            $table->integer('status');
+            $table->string('status');
             $table->integer('denda')->nullable();
             $table->date('tanggal_pinjam')->nullable();
             $table->date('tanggal_kembali')->nullable();

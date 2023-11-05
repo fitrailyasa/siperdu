@@ -23,8 +23,15 @@ class AdminTransaksiController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'nama' => 'required|max:255',
-            'slug' => 'required|max:255',
+            'kode_pinjam' => 'required|max:255', 
+            'peminjam_id' => 'required|max:255', 
+            'petugas_pinjam' => 'required|max:255', 
+            'petugas_kembali' => 'required|max:255', 
+            'status' => 'required|max:255', 
+            'denda' => 'required', 
+            'tanggal_pinjam' => 'required|max:255', 
+            'tanggal_kembali' => 'required|max:255', 
+            'tanggal_pengembalian' => 'required|max:255',
         ]);
 
         Peminjaman::create($request->all());
@@ -47,8 +54,15 @@ class AdminTransaksiController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'nama' => 'required|max:255',
-            'slug' => 'required|max:255',
+            'kode_pinjam' => 'required|max:255', 
+            'peminjam_id' => 'required|max:255', 
+            'petugas_pinjam' => 'required|max:255', 
+            'petugas_kembali' => 'required|max:255', 
+            'status' => 'required|max:255', 
+            'denda' => 'required', 
+            'tanggal_pinjam' => 'required|max:255', 
+            'tanggal_kembali' => 'required|max:255', 
+            'tanggal_pengembalian' => 'required|max:255',
         ]);
 
         $transaksi = Peminjaman::findOrFail($id);
