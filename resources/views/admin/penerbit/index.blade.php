@@ -21,7 +21,6 @@
                         <tr>
                             <th>No</th>
                             <th>Nama</th>
-                            <th>Slug</th>
                             <th>More</th>
                         </tr>
                     </thead>
@@ -30,7 +29,6 @@
                             <tr>
                                 <td>{{ $loop->iteration }}</td>
                                 <td>{{ $penerbit->nama }}</td>
-                                <td>{{ $penerbit->slug }}</td>
                                 <td class="manage-row">
                                     @if (auth()->user()->roles_id == 1)
                                         <a href="{{ route('admin.penerbit.show', $penerbit->id) }}"
@@ -76,7 +74,6 @@
                         <tr>
                             <th>No</th>
                             <th>Nama</th>
-                            <th>Slug</th>
                             <th>More</th>
                         </tr>
                     </tfoot>

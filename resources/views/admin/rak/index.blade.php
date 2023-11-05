@@ -23,7 +23,6 @@
                             <th>Rak</th>
                             <th>Baris</th>
                             <th>Kategori</th>
-                            <th>Slug</th>
                             <th>More</th>
                         </tr>
                     </thead>
@@ -34,7 +33,6 @@
                                 <td>{{ $rak->rak }}</td>
                                 <td>{{ $rak->baris }}</td>
                                 <td>{{ $rak->kategori->nama ?? '-' }}</td>
-                                <td>{{ $rak->slug }}</td>
                                 <td class="manage-row">
                                     @if (auth()->user()->roles_id == 1)
                                         <a href="{{ route('admin.rak.show', $rak->id) }}"
@@ -82,7 +80,6 @@
                             <th>Rak</th>
                             <th>Baris</th>
                             <th>Kategori</th>
-                            <th>Slug</th>
                             <th>More</th>
                         </tr>
                     </tfoot>

@@ -19,7 +19,6 @@ class BukuSeeder extends Seeder
                 'tanggal' => '2020-01-01', 
                 'stok' => 20, 
                 'sampul' => 'default.jpg', 
-                'slug' => 'asd', 
                 'penulis' => 'asd', 
                 'tahun_terbit' => 2020, 
                 'tempat_terbit' => 'asd', 

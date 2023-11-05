@@ -22,7 +22,7 @@
                 @endif
                 @csrf
                 <div class="row">
-                    <div class="col-md-4">
+                    <div class="col-md-6">
                         <div class="mb-3">
                             <label class="form-label">Judul</label>
                             <input type="text" class="form-control @error('judul') is-invalid @enderror"
@@ -32,22 +32,12 @@
                             @enderror
                         </div>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-6">
                         <div class="mb-3">
                             <label class="form-label">Tanggal</label>
                             <input type="date" class="form-control @error('tanggal') is-invalid @enderror"
                                 placeholder="Tanggal" name="tanggal" id="tanggal" required>
                             @error('tanggal')
-                                <div class="alert alert-danger">{{ $message }}</div>
-                            @enderror
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="mb-3">
-                            <label class="form-label">Slug</label>
-                            <input type="text" class="form-control @error('slug') is-invalid @enderror"
-                                placeholder="Slug" name="slug" id="slug" required>
-                            @error('slug')
                                 <div class="alert alert-danger">{{ $message }}</div>
                             @enderror
                         </div>

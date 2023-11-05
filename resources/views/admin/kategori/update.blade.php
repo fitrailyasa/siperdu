@@ -24,22 +24,12 @@
                 @csrf
                 @method('PUT')
                 <div class="row">
-                    <div class="col-md-6">
-                        <div class="mb-2">
+                    <div class="col-md-12">
+                        <div class="mb-3">
                             <label class="form-label">Nama</label>
                             <input type="text" class="form-control @error('nama') is-invalid @enderror"
                                 placeholder="nama" name="nama" id="nama" value="{{ $kategori->nama }}" required>
                             @error('nama')
-                                <div class="alert alert-danger">{{ $message }}</div>
-                            @enderror
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="mb-2">
-                            <label class="form-label">Slug</label>
-                            <input type="text" class="form-control @error('slug') is-invalid @enderror"
-                                placeholder="Slug" name="slug" id="slug" value="{{ $kategori->slug }}" required>
-                            @error('slug')
                                 <div class="alert alert-danger">{{ $message }}</div>
                             @enderror
                         </div>

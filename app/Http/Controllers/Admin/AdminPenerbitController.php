@@ -23,7 +23,6 @@ class AdminPenerbitController extends Controller
     {
         $request->validate([
             'nama' => 'required|max:255',
-            'slug' => 'required|max:255',
         ]);
 
         Penerbit::create($request->all());
@@ -47,7 +46,6 @@ class AdminPenerbitController extends Controller
     {
         $request->validate([
             'nama' => 'required|max:255',
-            'slug' => 'required|max:255',
         ]);
 
         $penerbit = Penerbit::findOrFail($id);

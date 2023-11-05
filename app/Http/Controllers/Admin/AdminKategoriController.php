@@ -23,7 +23,6 @@ class AdminKategoriController extends Controller
     {
         $request->validate([
             'nama' => 'required|max:255',
-            'slug' => 'required|max:255',
         ]);
 
         Kategori::create($request->all());
@@ -47,7 +46,6 @@ class AdminKategoriController extends Controller
     {
         $request->validate([
             'nama' => 'required|max:255',
-            'slug' => 'required|max:255',
         ]);
 
         $kategori = Kategori::findOrFail($id);

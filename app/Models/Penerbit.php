@@ -10,7 +10,7 @@ class Penerbit extends Model
     use HasFactory;
 
     protected $table = 'penerbit';
-    protected $fillable = ['nama', 'slug'];
+    protected $fillable = ['nama'];
 
     // relation
     public function buku()

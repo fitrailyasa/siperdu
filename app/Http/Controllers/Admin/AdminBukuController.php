@@ -30,7 +30,6 @@ class AdminBukuController extends Controller
         $request->validate([
             'judul' => 'required|max:255',
             'tanggal' => 'required|date',
-            'slug' => 'required|max:255',
             'sampul' => 'required|max:2048',
             'penulis' => 'required|max:255',
             'tahun_terbit' => 'required|max:255',
@@ -73,7 +72,6 @@ class AdminBukuController extends Controller
         $request->validate([
             'judul' => 'required|max:255',
             'tanggal' => 'required|date',
-            'slug' => 'required|max:255',
             'sampul' => 'required|max:255',
             'penulis' => 'required|max:255',
             'tahun_terbit' => 'required|max:255',

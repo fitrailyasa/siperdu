@@ -27,7 +27,6 @@ class AdminRakController extends Controller
             'rak' => 'required|max:255',
             'baris' => 'required|max:255',
             'kategori_id' => 'required',
-            'slug' => 'required|max:255',
         ]);
 
         Rak::create($request->all());
@@ -54,7 +53,6 @@ class AdminRakController extends Controller
             'rak' => 'required|max:255',
             'baris' => 'required|max:255',
             'kategori_id' => 'required',
-            'slug' => 'required|max:255',
         ]);
 
         $rak = Rak::findOrFail($id);

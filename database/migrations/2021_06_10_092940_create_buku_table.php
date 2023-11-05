@@ -17,7 +17,6 @@ class CreateBukuTable extends Migration
             $table->id();
             $table->string('judul');
             $table->date('tanggal');
-            $table->string('slug');
             $table->string('sampul');
             $table->string('penulis');
             $table->string('tahun_terbit');

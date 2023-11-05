@@ -10,7 +10,7 @@ class Kategori extends Model
     use HasFactory;
 
     protected $table = 'kategori';
-    protected $fillable = ['nama', 'slug'];
+    protected $fillable = ['nama'];
 
     public function rak()
     {
