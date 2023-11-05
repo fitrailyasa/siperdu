@@ -85,7 +85,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a href="{{ route('dashboard') }}" class="nav-link text-white @yield('')">
+                <a href="{{ route('admin.kartu') }}" class="nav-link text-white @yield('kartu')">
                     <i class="nav-icon fas fa-id-card"></i>
                     <p>
                         Kartu Perpustakaan
@@ -93,7 +93,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a href="{{ route('dashboard') }}" class="nav-link text-white @yield('')">
+                <a href="{{ route('admin.struktur') }}" class="nav-link text-white @yield('struktur')">
                     <i class="nav-icon fa fa-building-o"></i>
                     <p>
                         Struktur Organisasi

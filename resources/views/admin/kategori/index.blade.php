@@ -12,7 +12,7 @@
         <div class="card-body">
             <div class="d-flex justify-content-between mb-3">
                 <h3 class="card-title">Tabel Data Kategori</h3>
-                <a href="{{ route('admin.kategori.create') }}" class="btn-sm btn-success">Tambah
+                <a href="{{ route('admin.kategori.create') }}" class="btn-sm btn-primary">Tambah
                     Kategori</a>
             </div>
             <div class="table-responsive">

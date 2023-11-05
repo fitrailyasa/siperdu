@@ -12,6 +12,7 @@ use App\Http\Controllers\Admin\AdminKategoriController;
 use App\Http\Controllers\Admin\AdminPenerbitController;
 use App\Http\Controllers\Admin\AdminRakController;
 use App\Http\Controllers\Admin\AdminTransaksiController;
+use App\Http\Controllers\Admin\AdminPerpusController;
 use App\Http\Controllers\Client\KoleksiController;
 
 /*
@@ -49,6 +50,8 @@ Route::middleware(['auth'])->group(function () {
       Route::resource('penerbit', AdminPenerbitController::class);
       Route::resource('rak', AdminRakController::class);
       Route::resource('transaksi', AdminTransaksiController::class);
+      Route::get('/kartu', [AdminPerpusController::class, 'indexKartu'])->name('kartu');
+      Route::get('/struktur', [AdminPerpusController::class, 'indexStruktur'])->name('struktur');
     });
   
 });
