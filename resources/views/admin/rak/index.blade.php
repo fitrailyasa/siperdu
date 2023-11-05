@@ -33,7 +33,7 @@
                                 <td>{{ $loop->iteration }}</td>
                                 <td>{{ $rak->rak }}</td>
                                 <td>{{ $rak->baris }}</td>
-                                <td>{{ $rak->kategori->nama }}</td>
+                                <td>{{ $rak->kategori->nama ?? '-' }}</td>
                                 <td>{{ $rak->slug }}</td>
                                 <td class="manage-row">
                                     @if (auth()->user()->roles_id == 1)

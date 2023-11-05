@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Rak;
+use App\Models\Kategori;
 use Illuminate\Http\Request;
 
 class AdminRakController extends Controller
@@ -16,7 +17,8 @@ class AdminRakController extends Controller
 
     public function create()
     {
-        return view('admin.rak.create');
+        $kategoris = Kategori::all();
+        return view('admin.rak.create', compact('kategoris'));
     }
 
     public function store(Request $request)
@@ -42,7 +44,8 @@ class AdminRakController extends Controller
     public function edit($id)
     {
         $rak = Rak::findOrFail($id);
-        return view('admin.rak.update', compact('rak'));
+        $kategoris = Kategori::all();
+        return view('admin.rak.update', compact('rak', 'kategoris'));
     }
 
     public function update(Request $request, $id)

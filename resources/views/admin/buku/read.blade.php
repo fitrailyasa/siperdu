@@ -139,7 +139,7 @@
                     </div>
                     <div class="col-md-4">
                         <div class="mb-3">
-                            <label class="form-label">Penerbit ID</label>
+                            <label class="form-label">Penerbit</label>
                             <input type="text" class="form-control @error('penerbit_id') is-invalid @enderror"
                                 placeholder="Penerbit ID" name="penerbit_id" id="penerbit_id"
                                 value="{{ $buku->penerbit_id }}" disabled>
@@ -150,7 +150,7 @@
                     </div>
                     <div class="col-md-4">
                         <div class="mb-3">
-                            <label class="form-label">Kategori ID</label>
+                            <label class="form-label">Kategori</label>
                             <input type="text" class="form-control @error('kategori_id') is-invalid @enderror"
                                 placeholder="Kategori ID" name="kategori_id" id="kategori_id"
                                 value="{{ $buku->kategori_id }}" disabled>
@@ -164,7 +164,7 @@
                 <div class="row">
                     <div class="col-md-4">
                         <div class="mb-3">
-                            <label class="form-label">Rak ID</label>
+                            <label class="form-label">Rak</label>
                             <input type="text" class="form-control @error('rak_id') is-invalid @enderror"
                                 placeholder="Rak ID" name="rak_id" id="rak_id" value="{{ $buku->rak_id }}"
                                 disabled>

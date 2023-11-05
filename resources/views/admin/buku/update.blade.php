@@ -139,10 +139,15 @@
                     </div>
                     <div class="col-md-4">
                         <div class="mb-3">
-                            <label class="form-label">Penerbit ID</label>
-                            <input type="number" class="form-control @error('penerbit_id') is-invalid @enderror"
-                                placeholder="Penerbit ID" name="penerbit_id" id="penerbit_id"
-                                value="{{ $buku->penerbit_id }}" required>
+                            <label class="form-label">Penerbit</label>
+                            <select class="form-control @error('penerbit_id') is-invalid @enderror" name="penerbit_id"
+                                id="penerbit_id">
+                                @foreach ($penerbits as $penerbit)
+                                    <option value="{{ $penerbit->id }}"
+                                        {{ $buku->penerbit_id == $penerbit->id ? 'selected' : '' }}>
+                                        {{ $penerbit->nama }}</option>
+                                @endforeach
+                            </select>
                             @error('penerbit_id')
                                 <div class="alert alert-danger">{{ $message }}</div>
                             @enderror
@@ -150,10 +155,15 @@
                     </div>
                     <div class="col-md-4">
                         <div class="mb-3">
-                            <label class="form-label">Kategori ID</label>
-                            <input type="number" class="form-control @error('kategori_id') is-invalid @enderror"
-                                placeholder="Kategori ID" name="kategori_id" id="kategori_id"
-                                value="{{ $buku->kategori_id }}" required>
+                            <label class="form-label">Kategori</label>
+                            <select class="form-control @error('kategori_id') is-invalid @enderror" name="kategori_id"
+                                id="kategori_id">
+                                @foreach ($kategoris as $kategori)
+                                    <option value="{{ $kategori->id }}"
+                                        {{ $buku->kategori_id == $kategori->id ? 'selected' : '' }}>
+                                        {{ $kategori->nama }}</option>
+                                @endforeach
+                            </select>
                             @error('kategori_id')
                                 <div class="alert alert-danger">{{ $message }}</div>
                             @enderror
@@ -164,10 +174,15 @@
                 <div class="row">
                     <div class="col-md-4">
                         <div class="mb-3">
-                            <label class="form-label">Rak ID</label>
-                            <input type="number" class="form-control @error('rak_id') is-invalid @enderror"
-                                placeholder="Rak ID" name="rak_id" id="rak_id" value="{{ $buku->rak_id }}"
-                                required>
+                            <label class="form-label">Rak</label>
+                            <select class="form-control @error('rak_id') is-invalid @enderror" name="rak_id"
+                                id="rak_id">
+                                @foreach ($raks as $rak)
+                                    <option value="{{ $rak->id }}"
+                                        {{ $buku->rak_id == $rak->id ? 'selected' : '' }}>
+                                        {{ $rak->rak }}</option>
+                                @endforeach
+                            </select>
                             @error('rak_id')
                                 <div class="alert alert-danger">{{ $message }}</div>
                             @enderror

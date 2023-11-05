@@ -48,10 +48,15 @@
                 <div class="row">
                     <div class="col-md-6">
                         <div class="mb-2">
-                            <label class="form-label">Kategori id</label>
-                            <input type="text" class="form-control @error('kategori_id') is-invalid @enderror"
-                                placeholder="kategori_id" name="kategori_id" id="kategori_id"
-                                value="{{ $rak->kategori_id }}" required>
+                            <label class="form-label">Kategori</label>
+                            <select class="form-control @error('kategori_id') is-invalid @enderror" name="kategori_id"
+                                id="kategori_id" required>
+                                @foreach ($kategoris as $kategori)
+                                    <option value="{{ $kategori->id }}"
+                                        {{ $rak->kategori_id == $kategori->id ? 'selected' : '' }}>
+                                        {{ $kategori->nama }}</option>
+                                @endforeach
+                            </select>
                             @error('kategori_id')
                                 <div class="alert alert-danger">{{ $message }}</div>
                             @enderror

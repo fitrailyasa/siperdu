@@ -30,7 +30,7 @@ class CreateBukuTable extends Migration
             $table->foreignId('rak_id');
             $table->integer('stok');
             $table->integer('halaman');
-            $table->integer('tinggi');
+            $table->double('tinggi');
             $table->string('ddc');
             $table->string('isbn');
             $table->timestamps();

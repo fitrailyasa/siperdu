@@ -4,6 +4,9 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Buku;
+use App\Models\Penerbit;
+use App\Models\Rak;
+use App\Models\Kategori;
 use Illuminate\Http\Request;
 
 class AdminBukuController extends Controller
@@ -16,7 +19,10 @@ class AdminBukuController extends Controller
 
     public function create()
     {
-        return view('admin.buku.create');
+        $penerbits = Penerbit::all();
+        $raks = Rak::all();
+        $kategoris = Kategori::all();
+        return view('admin.buku.create', compact('penerbits', 'raks', 'kategoris'));
     }
 
     public function store(Request $request)
@@ -37,7 +43,7 @@ class AdminBukuController extends Controller
             'rak_id' => 'required',
             'stok' => 'required|integer',
             'halaman' => 'required|integer',
-            'tinggi' => 'required|integer',
+            'tinggi' => 'required|double',
             'ddc' => 'required|max:255',
             'isbn' => 'required|max:255',
         ]);
@@ -56,7 +62,10 @@ class AdminBukuController extends Controller
     public function edit($id)
     {
         $buku = Buku::findOrFail($id);
-        return view('admin.buku.update', compact('buku'));
+        $penerbits = Penerbit::all();
+        $raks = Rak::all();
+        $kategoris = Kategori::all();
+        return view('admin.buku.update', compact('buku', 'penerbits', 'raks', 'kategoris'));
     }
 
     public function update(Request $request, $id)
@@ -77,7 +86,7 @@ class AdminBukuController extends Controller
             'rak_id' => 'required',
             'stok' => 'required|integer',
             'halaman' => 'required|integer',
-            'tinggi' => 'required|integer',
+            'tinggi' => 'required|double',
             'ddc' => 'required|max:255',
             'isbn' => 'required|max:255',
         ]);
