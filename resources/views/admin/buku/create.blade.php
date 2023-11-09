@@ -45,7 +45,7 @@
                 </div>
 
                 <div class="row">
-                    <div class="col-md-4">
+                    {{-- <div class="col-md-4">
                         <div class="mb-3">
                             <label class="form-label">Sampul</label>
                             <input type="file" class="form-control @error('sampul') is-invalid @enderror"
@@ -54,8 +54,8 @@
                                 <div class="alert alert-danger">{{ $message }}</div>
                             @enderror
                         </div>
-                    </div>
-                    <div class="col-md-4">
+                    </div> --}}
+                    <div class="col-md-6">
                         <div class="mb-3">
                             <label class="form-label">Penulis</label>
                             <input type="text" class="form-control @error('penulis') is-invalid @enderror"
@@ -65,7 +65,7 @@
                             @enderror
                         </div>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-6">
                         <div class="mb-3">
                             <label class="form-label">Tahun Terbit</label>
                             <input type="number" class="form-control @error('tahun_terbit') is-invalid @enderror"
@@ -78,7 +78,7 @@
                 </div>
 
                 <div class="row">
-                    <div class="col-md-4">
+                    <div class="col-md-6">
                         <div class="mb-3">
                             <label class="form-label">Tempat Terbit</label>
                             <input type="text" class="form-control @error('tempat_terbit') is-invalid @enderror"
@@ -88,17 +88,7 @@
                             @enderror
                         </div>
                     </div>
-                    <div class="col-md-4">
-                        <div class="mb-3">
-                            <label class="form-label">No Inventaris</label>
-                            <input type="number" class="form-control @error('jumlah') is-invalid @enderror"
-                                placeholder="No Inventaris" name="jumlah" id="jumlah" required>
-                            @error('jumlah')
-                                <div class="alert alert-danger">{{ $message }}</div>
-                            @enderror
-                        </div>
-                    </div>
-                    <div class="col-md-4">
+                    <div class="col-md-6">
                         <div class="mb-3">
                             <label class="form-label">Sumber Buku</label>
                             <input type="text" class="form-control @error('sumber_buku') is-invalid @enderror"

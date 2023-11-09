@@ -76,7 +76,6 @@ class AdminBukuController extends Controller
             'penulis' => 'required|max:255',
             'tahun_terbit' => 'required|max:255',
             'tempat_terbit' => 'required|max:255',
-            'jumlah' => 'required|integer',
             'sumber_buku' => 'required|max:255',
             'keterangan' => 'required|max:255',
             'penerbit_id' => 'required',

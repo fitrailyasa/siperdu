@@ -15,10 +15,10 @@
                         alt="{{ $buku->judul }}">
                 </div>
                 <div>
-                    <h4 class="card-title">{{ $buku->judul }}</h4>
-                    <p class="card-text"><b>Oleh</b> {{ $buku->penulis ?? 'Penulis Tidak Tersedia' }}</p>
-                    <p class="card-text"><b>Penerbit</b> {{ $buku->penerbit->nama ?? 'Penerbit Tidak Tersedia' }}</p>
-                    <p class="card-text fw-bold"><b>ISBN</b> {{ $buku->isbn ?? 'ISBN Tidak Tersedia' }}</p>
+                    <h4 class="card-title">{{ $buku->judul ?? '-' }}</h4>
+                    <p class="card-text"><b>Oleh</b> {{ $buku->penulis ?? '-' }}</p>
+                    <p class="card-text"><b>Penerbit</b> {{ $buku->penerbit->nama ?? '-' }}</p>
+                    <p class="card-text fw-bold"><b>ISBN</b> {{ $buku->isbn ?? '-' }}</p>
                 </div>
             </div>
         </div>
