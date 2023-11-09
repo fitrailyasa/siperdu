@@ -25,9 +25,9 @@
                         @foreach ($users as $user)
                             <tr>
                                 <td>{{ $loop->iteration }}</td>
-                                <td>{{ $user->nama }}</td>
-                                <td>{{ $user->email }}</td>
-                                <td>{{ $user->roles->nama_roles }}</td>
+                                <td>{{ $user->nama ?? '-' }}</td>
+                                <td>{{ $user->email ?? '-' }}</td>
+                                <td>{{ $user->roles->nama_roles ?? '-' }}</td>
                                 <td class="manage-row">
                                     @if (auth()->user()->roles_id == 1)
                                         <a href="{{ route('admin.user.show', $user->id) }}"

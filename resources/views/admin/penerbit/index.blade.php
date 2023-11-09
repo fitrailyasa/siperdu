@@ -28,7 +28,7 @@
                         @foreach ($penerbits as $penerbit)
                             <tr>
                                 <td>{{ $loop->iteration }}</td>
-                                <td>{{ $penerbit->nama }}</td>
+                                <td>{{ $penerbit->nama ?? '-' }}</td>
                                 <td class="manage-row">
                                     @if (auth()->user()->roles_id == 1)
                                         <a href="{{ route('admin.penerbit.show', $penerbit->id) }}"

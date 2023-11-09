@@ -26,8 +26,8 @@
                                     <div class="col-md-6">
                                         <div class="card bg-success text-white">
                                             <div class="card-body">
-                                                <h5 class="card-title">{{ $kartu->nama }}</h5>
-                                                <p class="card-text">{{ $kartu->roles->nama_roles }}</p>
+                                                <h5 class="card-title">{{ $kartu->nama ?? '-' }}</h5>
+                                                <p class="card-text">{{ $kartu->roles->nama_roles ?? '-' }}</p>
                                             </div>
                                         </div>
                                     </div>

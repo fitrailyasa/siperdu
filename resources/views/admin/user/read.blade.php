@@ -32,28 +32,28 @@
                     <label class="col-sm-3 col-form-label">Nama</label>
                     <div class="col-sm-9">
                         <input type="text" class="form-control" placeholder="nama" name="nama" id="nama"
-                            value="{{ $user->nama }}" disabled>
+                            value="{{ $user->nama ?? '-' }}" disabled>
                     </div>
                 </div>
                 <div class="mb-3 row">
                     <label class="col-sm-3 col-form-label">Email</label>
                     <div class="col-sm-9">
                         <input type="text" class="form-control" placeholder="email" name="email" id="email"
-                            value="{{ $user->email }}" disabled>
+                            value="{{ $user->email ?? '-' }}" disabled>
                     </div>
                 </div>
                 <div class="mb-3 row">
                     <label class="col-sm-3 col-form-label">No Telepon</label>
                     <div class="col-sm-9">
                         <input type="text" class="form-control" placeholder="no_telepon" name="no_telepon"
-                            id="no_telepon" value="{{ $user->no_telepon }}" disabled>
+                            id="no_telepon" value="{{ $user->no_telepon ?? '-' }}" disabled>
                     </div>
                 </div>
                 <div class="mb-3 row">
                     <label class="col-sm-3 col-form-label">Password</label>
                     <div class="col-sm-9">
                         <input type="text" class="form-control" placeholder="password" name="password" id="password"
-                            value="{{ $user->password }}" disabled>
+                            value="{{ $user->password ?? '-' }}" disabled>
                     </div>
                 </div>
                 <div class="mb-3 row">

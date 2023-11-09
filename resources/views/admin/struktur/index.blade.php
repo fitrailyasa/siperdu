@@ -14,7 +14,7 @@
                     <thead>
                         <tr>
                             <th>No</th>
-                            <th>struktur</th>
+                            <th>Struktur</th>
                             <th>More</th>
                         </tr>
                     </thead>
@@ -26,8 +26,8 @@
                                     <div class="col-md-6">
                                         <div class="card bg-warning text-white">
                                             <div class="card-body">
-                                                <h5 class="card-title">{{ $struktur->nama }}</h5>
-                                                <p class="card-text">{{ $struktur->roles->nama_roles }}</p>
+                                                <h5 class="card-title">{{ $struktur->nama ?? '-' }}</h5>
+                                                <p class="card-text">{{ $struktur->roles->nama_roles ?? '-' }}</p>
                                             </div>
                                         </div>
                                     </div>
@@ -44,7 +44,7 @@
                     <tfoot>
                         <tr>
                             <th>No</th>
-                            <th>struktur</th>
+                            <th>Struktur</th>
                             <th>More</th>
                         </tr>
                     </tfoot>

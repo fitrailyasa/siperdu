@@ -28,7 +28,7 @@
                         @foreach ($kategoris as $kategori)
                             <tr>
                                 <td>{{ $loop->iteration }}</td>
-                                <td>{{ $kategori->nama }}</td>
+                                <td>{{ $kategori->nama ?? '-' }}</td>
                                 <td class="manage-row">
                                     @if (auth()->user()->roles_id == 1)
                                         <a href="{{ route('admin.kategori.show', $kategori->id) }}"

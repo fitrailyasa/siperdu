@@ -28,7 +28,8 @@
                         <div class="mb-3">
                             <label class="form-label">Nama</label>
                             <input type="text" class="form-control @error('nama') is-invalid @enderror"
-                                placeholder="nama" name="nama" id="nama" value="{{ $kategori->nama }}" disabled>
+                                placeholder="nama" name="nama" id="nama" value="{{ $kategori->nama ?? '-' }}"
+                                disabled>
                             @error('nama')
                                 <div class="alert alert-danger">{{ $message }}</div>
                             @enderror

@@ -35,15 +35,15 @@
                         @foreach ($transaksis as $transaksi)
                             <tr>
                                 <td>{{ $loop->iteration }}</td>
-                                <td>{{ $transaksi->kode_pinjam }}</td>
-                                <td>{{ $transaksi->peminjam_id }}</td>
-                                <td>{{ $transaksi->petugas_pinjam }}</td>
-                                <td>{{ $transaksi->petugas_kembali }}</td>
-                                <td>{{ $transaksi->status }}</td>
-                                <td>{{ $transaksi->denda }}</td>
-                                <td>{{ $transaksi->tanggal_pinjam }}</td>
-                                <td>{{ $transaksi->tanggal_kembali }}</td>
-                                <td>{{ $transaksi->tanggal_pengembalian }}</td>
+                                <td>{{ $transaksi->kode_pinjam ?? '-' }}</td>
+                                <td>{{ $transaksi->peminjam_id ?? '-' }}</td>
+                                <td>{{ $transaksi->petugas_pinjam ?? '-' }}</td>
+                                <td>{{ $transaksi->petugas_kembali ?? '-' }}</td>
+                                <td>{{ $transaksi->status ?? '-' }}</td>
+                                <td>{{ $transaksi->denda ?? '-' }}</td>
+                                <td>{{ $transaksi->tanggal_pinjam ?? '-' }}</td>
+                                <td>{{ $transaksi->tanggal_kembali ?? '-' }}</td>
+                                <td>{{ $transaksi->tanggal_pengembalian ?? '-' }}</td>
                                 <td class="manage-row">
                                     @if (auth()->user()->roles_id == 1)
                                         <a href="{{ route('admin.transaksi.show', $transaksi->id) }}"

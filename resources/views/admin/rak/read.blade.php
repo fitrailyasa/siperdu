@@ -27,7 +27,7 @@
                         <div class="mb-3">
                             <label class="form-label">Rak</label>
                             <input type="text" class="form-control @error('rak') is-invalid @enderror" placeholder="rak"
-                                name="rak" id="rak" value="{{ $rak->rak }}" disabled>
+                                name="rak" id="rak" value="{{ $rak->rak ?? '-' }}" disabled>
                             @error('rak')
                                 <div class="alert alert-danger">{{ $message }}</div>
                             @enderror
@@ -37,7 +37,7 @@
                         <div class="mb-3">
                             <label class="form-label">Baris</label>
                             <input type="number" class="form-control @error('baris') is-invalid @enderror"
-                                placeholder="baris" name="baris" id="baris" value="{{ $rak->baris }}" disabled>
+                                placeholder="baris" name="baris" id="baris" value="{{ $rak->baris ?? '-' }}" disabled>
                             @error('baris')
                                 <div class="alert alert-danger">{{ $message }}</div>
                             @enderror
@@ -48,7 +48,7 @@
                             <label class="form-label">Kategori</label>
                             <input type="number" class="form-control @error('kategori_id') is-invalid @enderror"
                                 placeholder="kategori_id" name="kategori_id" id="kategori_id"
-                                value="{{ $rak->kategori_id }}" disabled>
+                                value="{{ $rak->kategori_id ?? '-' }}" disabled>
                             @error('kategori_id')
                                 <div class="alert alert-danger">{{ $message }}</div>
                             @enderror
