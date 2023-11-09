@@ -116,8 +116,16 @@
                             <label class="form-label">Penerbit</label>
                             <select class="form-control @error('penerbit_id') is-invalid @enderror" name="penerbit_id"
                                 id="penerbit_id">
-                                @foreach ($penerbits as $penerbit)
-                                    <option value="{{ $penerbit->id }}">{{ $penerbit->nama }}</option>
+                                @php
+                                    $seenIds = [];
+                                @endphp
+                                @foreach ($bukus as $buku)
+                                    @if ($buku->penerbit_id !== null && !in_array($buku->penerbit_id, $seenIds))
+                                        <option value="{{ $buku->penerbit_id }}">{{ $buku->penerbit_id }}</option>
+                                        @php
+                                            $seenIds[] = $buku->penerbit_id;
+                                        @endphp
+                                    @endif
                                 @endforeach
                             </select>
                             @error('penerbit_id')
@@ -148,7 +156,7 @@
                             <select class="form-control @error('rak_id') is-invalid @enderror" name="rak_id"
                                 id="rak_id">
                                 @foreach ($raks as $rak)
-                                    <option value="{{ $rak->id }}">{{ $rak->rak }}</option>
+                                    <option value="{{ $rak->id }}">{{ $rak->kode_rak }}</option>
                                 @endforeach
                             </select>
                             @error('rak_id')

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Buku;
 use App\Models\Penerbit;
 use Illuminate\Http\Request;
 
@@ -11,7 +12,8 @@ class AdminPenerbitController extends Controller
     public function index()
     {
         $penerbits = Penerbit::all();
-        return view('admin.penerbit.index', compact('penerbits'));
+        $bukus = Buku::all();
+        return view('admin.penerbit.index', compact('penerbits', 'bukus'));
     }
 
     public function create()

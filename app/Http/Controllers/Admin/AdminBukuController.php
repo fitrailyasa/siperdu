@@ -19,10 +19,11 @@ class AdminBukuController extends Controller
 
     public function create()
     {
+        $bukus = Buku::all();
         $penerbits = Penerbit::all();
         $raks = Rak::all();
         $kategoris = Kategori::all();
-        return view('admin.buku.create', compact('penerbits', 'raks', 'kategoris'));
+        return view('admin.buku.create', compact('penerbits', 'raks', 'kategoris', 'bukus'));
     }
 
     public function store(Request $request)

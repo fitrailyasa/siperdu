@@ -24,24 +24,36 @@
                             <th>More</th>
                         </tr>
                     </thead>
+                    @php
+                        $validBukus = [];
+                    @endphp
+
+                    @foreach ($bukus as $buku)
+                        @if ($buku->penerbit_id != null)
+                            @php
+                                $validBukus[] = $buku;
+                            @endphp
+                        @endif
+                    @endforeach
+
                     <tbody>
-                        @foreach ($penerbits as $penerbit)
+                        @foreach ($validBukus as $buku)
                             <tr>
                                 <td>{{ $loop->iteration }}</td>
-                                <td>{{ $penerbit->nama ?? '-' }}</td>
+                                <td>{{ $buku->penerbit_id }}</td>
                                 <td class="manage-row">
                                     @if (auth()->user()->roles_id == 1)
-                                        <a href="{{ route('admin.penerbit.show', $penerbit->id) }}"
+                                        <a href="{{ route('admin.penerbit.show', $buku->id) }}"
                                             class="btn-sm btn-success">Detail</a>
-                                        <a href="{{ route('admin.penerbit.edit', $penerbit->id) }}"
+                                        <a href="{{ route('admin.penerbit.edit', $buku->id) }}"
                                             class="btn-sm btn-warning">Edit</a>
                                         <!-- Button trigger modal -->
                                         <a role="button" class="btn-sm btn-danger delete-button" data-bs-toggle="modal"
-                                            data-bs-target=".bd-example-modal-sm{{ $penerbit->id }}">
+                                            data-bs-target=".bd-example-modal-sm{{ $buku->id }}">
                                             Hapus
                                         </a>
                                         <!-- Modal -->
-                                        <div class="modal fade bd-example-modal-sm{{ $penerbit->id }}" tabindex="-1"
+                                        <div class="modal fade bd-example-modal-sm{{ $buku->id }}" tabindex="-1"
                                             role="dialog" aria-hidden="">
                                             <div class="modal-dialog ">
                                                 <div class="modal-content">
@@ -52,7 +64,7 @@
                                                     </div>
                                                     <div class="modal-body">Apakah anda yakin ingin menghapus data?</div>
                                                     <div class="modal-footer">
-                                                        <form action="{{ route('admin.penerbit.destroy', $penerbit->id) }}"
+                                                        <form action="{{ route('admin.penerbit.destroy', $buku->id) }}"
                                                             method="POST">
                                                             @method('DELETE')
                                                             @csrf
@@ -70,6 +82,7 @@
                             </tr>
                         @endforeach
                     </tbody>
+
                     <tfoot>
                         <tr>
                             <th>No</th>

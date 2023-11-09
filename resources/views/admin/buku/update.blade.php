@@ -159,7 +159,7 @@
                                 @foreach ($raks as $rak)
                                     <option value="{{ $rak->id }}"
                                         {{ $buku->rak_id == $rak->id ? 'selected' : '' }}>
-                                        {{ $rak->rak }}</option>
+                                        {{ $rak->kode_rak }}</option>
                                 @endforeach
                             </select>
                             @error('rak_id')
