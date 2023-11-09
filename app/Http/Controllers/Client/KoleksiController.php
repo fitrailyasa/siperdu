@@ -20,4 +20,16 @@ class KoleksiController extends Controller
         $buku = Buku::find($id);
         return view('client.detail-buku', compact('buku'));
     }
+
+    public function search(Request $request)
+    {
+        $query = $request->input('query');
+
+        $bukus = Buku::where('judul', 'like', "%$query%")
+                    ->orWhere('penulis', 'like', "%$query%")
+                    ->get();
+
+        return view('client.search', compact('bukus'));
+    }
+
 }
