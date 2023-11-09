@@ -43,10 +43,10 @@
                     </div>
                 </div>
                 <div class="mb-3 row">
-                    <label class="col-sm-3 col-form-label">No Telepon</label>
+                    <label class="col-sm-3 col-form-label">NISN</label>
                     <div class="col-sm-9">
-                        <input type="text" class="form-control" placeholder="no_telepon" name="no_telepon"
-                            id="no_telepon" value="{{ $user->no_telepon ?? '-' }}" disabled>
+                        <input type="text" class="form-control" placeholder="nisn" name="nisn" id="nisn"
+                            value="{{ $user->nisn ?? '-' }}" disabled>
                     </div>
                 </div>
                 <div class="mb-3 row">

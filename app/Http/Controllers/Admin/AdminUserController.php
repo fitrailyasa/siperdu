@@ -15,6 +15,12 @@ class AdminUserController extends Controller
         return view('admin.user.index', compact('users'));
     }
 
+    public function indexKartu()
+    {
+        $kartus = User::all();
+        return view('admin.kartu.index', compact('kartus'));
+    }
+
     public function verif()
     {
         $users = User::where('roles_id', 99)->get();
@@ -32,7 +38,7 @@ class AdminUserController extends Controller
             [
                 'nama' => 'required|max:255',
                 'email' => 'required|max:255|unique:users,email',
-                'no_telepon' => 'required',
+                'nisn' => 'required',
                 'password' => 'required',
                 'roles_id' => 'required'
             ],
@@ -42,7 +48,7 @@ class AdminUserController extends Controller
                 'email.required' => 'Email harus diisi!',
                 'email.max' => 'Email maksimal 255 karakter!',
                 'email.unique' => 'Email sudah terdaftar!',
-                'no_telepon.required' => 'No Telepon harus diisi!',
+                'nisn.required' => 'NISN harus diisi!',
                 'password.required' => 'Password harus diisi!',
                 'roles_id.required' => 'Roles harus diisi!'
             ]
@@ -51,7 +57,7 @@ class AdminUserController extends Controller
         User::create([
             'nama' => $request->nama,
             'email' => $request->email,
-            'no_telepon' => $request->no_telepon,
+            'nisn' => $request->nisn,
             'password' => Hash::make($request->password),
             'roles_id' => $request->roles_id
         ]);
@@ -79,7 +85,7 @@ class AdminUserController extends Controller
             [
                 'nama' => 'required|max:255',
                 'email' => 'required|max:255',
-                'no_telepon' => 'required',
+                'nisn' => 'required',
                 'roles_id' => 'required'
             ],
             [
@@ -87,7 +93,7 @@ class AdminUserController extends Controller
                 'nama.max' => 'Nama maksimal 255 karakter!',
                 'email.required' => 'Email harus diisi!',
                 'email.max' => 'Email maksimal 255 karakter!',
-                'no_telepon.required' => 'No Telepon harus diisi!',
+                'nisn.required' => 'NISN harus diisi!',
                 'roles_id.required' => 'Roles harus diisi!'
             ]
         );
@@ -97,7 +103,7 @@ class AdminUserController extends Controller
             [
                 'nama' => $request->nama,
                 'email' => $request->email,
-                'no_telepon' => $request->no_telepon,
+                'nisn' => $request->nisn,
                 'password' => Hash::make($request->password),
                 'roles_id' => $request->roles_id
             ]

@@ -24,7 +24,7 @@ class User extends Authenticatable
         'nama',
         'email',
         'gambar_user',
-        'no_telepon',
+        'nisn',
         'password',
         'roles_id'
     ];

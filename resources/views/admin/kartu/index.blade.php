@@ -26,8 +26,12 @@
                                     <div class="col-md-6">
                                         <div class="card bg-success text-white">
                                             <div class="card-body">
+                                                <img class="img img-fluid rounded mx-auto d-block" width="100px"
+                                                    src="{{ asset('assets/profile/' . $kartu->gambar_user) }}"
+                                                    alt="">
                                                 <h5 class="card-title">{{ $kartu->nama ?? '-' }}</h5>
-                                                <p class="card-text">{{ $kartu->roles->nama_roles ?? '-' }}</p>
+                                                <p class="card-text">{{ $kartu->nisn ?? '-' }}</p>
+                                                <p class="card-text">{{ $kartu->roles->nama_roles ?? '-' }} Perpustkaan</p>
                                             </div>
                                         </div>
                                     </div>

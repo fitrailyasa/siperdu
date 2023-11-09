@@ -12,7 +12,10 @@
 
     <div class="text-center" style="background-image: url({{ asset('assets/images/bg-home.png') }})">
         <h3 class="text-white font-weight-bold py-5">STRUKTUR ORGANISASI</h3>
-        <img class="img img-fluid" src="{{ asset('assets/images/org.png') }}" width="100%" alt="org">
+        @foreach ($strukturs as $struktur)
+            <img class="img img-fluid" width="100%" src="{{ asset('assets/struktur') }}/{{ $struktur->gambar }}"
+                alt="">
+        @endforeach
     </div>
 
     <div class="px-5 m-5">

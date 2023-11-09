@@ -93,7 +93,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a href="{{ route('admin.struktur') }}" class="nav-link text-white @yield('struktur')">
+                <a href="admin/struktur/1/edit" class="nav-link text-white @yield('struktur')">
                     <i class="nav-icon fa fa-building-o"></i>
                     <p>
                         Struktur Organisasi

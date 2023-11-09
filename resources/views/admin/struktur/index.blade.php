@@ -6,87 +6,43 @@
 
 @section('content')
 
-    <div class="card">
-        <!-- /.card-header -->
-        <div class="card-body">
-            <div class="table-responsive">
-                <table id="example1" class="table table-bordered table-striped">
-                    <thead>
-                        <tr>
-                            <th>No</th>
-                            <th>Struktur</th>
-                            <th>More</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach ($strukturs as $struktur)
-                            <tr>
-                                <td>{{ $loop->iteration }}</td>
-                                <td>
-                                    <div class="col-md-6">
-                                        <div class="card bg-warning text-white">
-                                            <div class="card-body">
-                                                <h5 class="card-title">{{ $struktur->nama ?? '-' }}</h5>
-                                                <p class="card-text">{{ $struktur->roles->nama_roles ?? '-' }}</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td class="manage-row">
-                                    @if (auth()->user()->roles_id == 1)
-                                        <a href="{{ route('admin.user.show', $struktur->id) }}"
-                                            class="btn-sm btn-success">Detail</a>
-                                    @endif
-                                </td>
-                            </tr>
-                        @endforeach
-                    </tbody>
-                    <tfoot>
-                        <tr>
-                            <th>No</th>
-                            <th>Struktur</th>
-                            <th>More</th>
-                        </tr>
-                    </tfoot>
-                </table>
+    <div class="col-lg-12 col-lg-12 form-wrapper" id="edit-struktur">
+        <div class="card">
+            <div class="card-body">
+                @if (auth()->user()->roles_id == 1)
+                    <form method="POST" action="{{ route('admin.struktur.update', $struktur->id) }}"
+                        enctype="multipart/form-data">
+                @endif
+                @csrf
+                @method('PUT')
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="mb-3">
+                            <label class="form-label">Gambar</label><br>
+                            <img class="img img-fluid" width="500"
+                                src="{{ asset('assets/struktur') }}/{{ $struktur->gambar }}" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="mb-3">
+                            <input type="file" class="form-control @error('gambar') is-invalid @enderror"
+                                placeholder="gambar" name="gambar" id="gambar" value="{{ $struktur->gambar }}" enabled>
+                            @error('gambar')
+                                <div class="alert alert-danger">{{ $message }}</div>
+                            @enderror
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12 text-right">
+                        <button type="submit" class="btn btn-primary">Simpan</button>
+                    </div>
+                </div>
+                </form>
             </div>
         </div>
-        <!-- /.card-body -->
-    </div>
 
-@endsection
-
-@section('script')
-    <script>
-        $(function() {
-            $("#example1").DataTable({
-                "responsive": true,
-                "lengthChange": false,
-                "autoWidth": false,
-                "buttons": ["excel", "pdf", "print"]
-            }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
-            $('#example2').DataTable({
-                "paging": true,
-                "lengthChange": false,
-                "searching": false,
-                "ordering": true,
-                "info": true,
-                "autoWidth": false,
-                "responsive": true,
-            });
-        });
-    </script>
-    <!-- DataTables  & Plugins -->
-    <script src="{{ asset('assets/plugins/datatables/jquery.dataTables.min.js') }}"></script>
-    <script src="{{ asset('assets/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js') }}"></script>
-    <script src="{{ asset('assets/plugins/datatables-responsive/js/dataTables.responsive.min.js') }}"></script>
-    <script src="{{ asset('assets/plugins/datatables-responsive/js/responsive.bootstrap4.min.js') }}"></script>
-    <script src="{{ asset('assets/plugins/datatables-buttons/js/dataTables.buttons.min.js') }}"></script>
-    <script src="{{ asset('assets/plugins/datatables-buttons/js/buttons.bootstrap4.min.js') }}"></script>
-    <script src="{{ asset('assets/plugins/jszip/jszip.min.js') }}"></script>
-    <script src="{{ asset('assets/plugins/pdfmake/pdfmake.min.js') }}"></script>
-    <script src="{{ asset('assets/plugins/pdfmake/vfs_fonts.js') }}"></script>
-    <script src="{{ asset('assets/plugins/datatables-buttons/js/buttons.html5.min.js') }}"></script>
-    <script src="{{ asset('assets/plugins/datatables-buttons/js/buttons.print.min.js') }}"></script>
-    <script src="{{ asset('assets/plugins/datatables-buttons/js/buttons.colVis.min.js') }}"></script>
-@endsection
+    @endsection

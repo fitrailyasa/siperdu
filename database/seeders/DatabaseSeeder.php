@@ -18,6 +18,7 @@ class DatabaseSeeder extends Seeder
         $this->call(PenerbitSeeder::class);
         $this->call(RakSeeder::class);
         $this->call(BukuSeeder::class);
+        $this->call(StrukturSeeder::class);
         $this->call(TransaksiSeeder::class);
     }
 }

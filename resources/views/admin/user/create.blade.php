@@ -42,11 +42,11 @@
                     </div>
                 </div>
                 <div class="mb-3 row">
-                    <label class="col-sm-3 col-form-label">No Telepon</label>
+                    <label class="col-sm-3 col-form-label">NISN</label>
                     <div class="col-sm-9">
-                        <input type="text" class="form-control @error('no_telepon') is-invalid @enderror"
-                            placeholder="no_telepon" name="no_telepon" id="no_telepon" required>
-                        @error('no_telepon')
+                        <input type="text" class="form-control @error('nisn') is-invalid @enderror" placeholder="nisn"
+                            name="nisn" id="nisn" required>
+                        @error('nisn')
                             <div class="alert alert-danger">{{ $message }}</div>
                         @enderror
                     </div>
