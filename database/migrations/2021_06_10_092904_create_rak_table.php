@@ -15,9 +15,8 @@ class CreateRakTable extends Migration
     {
         Schema::create('rak', function (Blueprint $table) {
             $table->id();
-            $table->string('rak');
-            $table->string('baris');
-            $table->foreignId('kategori_id');
+            $table->string('kode_rak');
+            $table->string('nama_rak');
             $table->timestamps();
         });
     }

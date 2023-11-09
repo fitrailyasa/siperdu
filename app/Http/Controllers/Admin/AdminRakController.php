@@ -24,9 +24,8 @@ class AdminRakController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'rak' => 'required|max:255',
-            'baris' => 'required|max:255',
-            'kategori_id' => 'required',
+            'kode_rak' => 'required|max:255',
+            'nama_rak' => 'required|max:255',
         ]);
 
         Rak::create($request->all());
@@ -50,9 +49,8 @@ class AdminRakController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'rak' => 'required|max:255',
-            'baris' => 'required|max:255',
-            'kategori_id' => 'required',
+            'kode_rak' => 'required|max:255',
+            'nama_rak' => 'required|max:255',
         ]);
 
         $rak = Rak::findOrFail($id);

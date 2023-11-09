@@ -20,9 +20,8 @@
                     <thead>
                         <tr>
                             <th>No</th>
-                            <th>Rak</th>
-                            <th>Baris</th>
-                            <th>Kategori</th>
+                            <th>Kode Rak</th>
+                            <th>Nama Rak</th>
                             <th>More</th>
                         </tr>
                     </thead>
@@ -30,9 +29,8 @@
                         @foreach ($raks as $rak)
                             <tr>
                                 <td>{{ $loop->iteration }}</td>
-                                <td>{{ $rak->rak ?? '-' }}</td>
-                                <td>{{ $rak->baris ?? '-' }}</td>
-                                <td>{{ $rak->kategori->nama ?? '-' }}</td>
+                                <td>{{ $rak->kode_rak ?? '-' }}</td>
+                                <td>{{ $rak->nama_rak ?? '-' }}</td>
                                 <td class="manage-row">
                                     @if (auth()->user()->roles_id == 1)
                                         <a href="{{ route('admin.rak.show', $rak->id) }}"
@@ -77,9 +75,8 @@
                     <tfoot>
                         <tr>
                             <th>No</th>
-                            <th>Rak</th>
-                            <th>Baris</th>
-                            <th>Kategori</th>
+                            <th>Kode Rak</th>
+                            <th>Nama Rak</th>
                             <th>More</th>
                         </tr>
                     </tfoot>

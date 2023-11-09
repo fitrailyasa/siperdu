@@ -25,36 +25,20 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="mb-3">
-                            <label class="form-label">Rak</label>
-                            <input type="text" class="form-control @error('rak') is-invalid @enderror" placeholder="rak"
-                                name="rak" id="rak" value="{{ $rak->rak }}" required>
-                            @error('rak')
+                            <label class="form-label">Kode Rak</label>
+                            <input type="text" class="form-control @error('kode_rak') is-invalid @enderror"
+                                placeholder="kode_rak" name="kode_rak" id="kode_rak" value="{{ $rak->kode_rak }}" required>
+                            @error('kode_rak')
                                 <div class="alert alert-danger">{{ $message }}</div>
                             @enderror
                         </div>
                     </div>
                     <div class="col-md-12">
                         <div class="mb-3">
-                            <label class="form-label">Baris</label>
-                            <input type="number" class="form-control @error('baris') is-invalid @enderror"
-                                placeholder="baris" name="baris" id="baris" value="{{ $rak->baris }}" required>
-                            @error('baris')
-                                <div class="alert alert-danger">{{ $message }}</div>
-                            @enderror
-                        </div>
-                    </div>
-                    <div class="col-md-12">
-                        <div class="mb-3">
-                            <label class="form-label">Kategori</label>
-                            <select class="form-control @error('kategori_id') is-invalid @enderror" name="kategori_id"
-                                id="kategori_id" required>
-                                @foreach ($kategoris as $kategori)
-                                    <option value="{{ $kategori->id }}"
-                                        {{ $rak->kategori_id == $kategori->id ? 'selected' : '' }}>
-                                        {{ $kategori->nama }}</option>
-                                @endforeach
-                            </select>
-                            @error('kategori_id')
+                            <label class="form-label">Nama Rak</label>
+                            <input type="text" class="form-control @error('nama_rak') is-invalid @enderror"
+                                placeholder="nama_rak" name="nama_rak" id="nama_rak" value="{{ $rak->nama_rak }}" required>
+                            @error('nama_rak')
                                 <div class="alert alert-danger">{{ $message }}</div>
                             @enderror
                         </div>

@@ -15,105 +15,25 @@ class RakSeeder extends Seeder
     {
         $raks = [
             [
-                'rak' => '000',
-                'baris' => '1',
-                'kategori_id' => 1
+                'kode_rak' => '000',
+                'nama_rak' => 'Rak 1',
             ],
             [
-                'rak' => '000',
-                'baris' => '2',
-                'kategori_id' => 2
+                'kode_rak' => '200',
+                'nama_rak' => 'Rak 2',
             ],
             [
-                'rak' => '000',
-                'baris' => '3',
-                'kategori_id' => 3
+                'kode_rak' => '400',
+                'nama_rak' => 'Rak 3',
             ],
             [
-                'rak' => '000',
-                'baris' => '4',
-                'kategori_id' => 4
+                'kode_rak' => '600',
+                'nama_rak' => 'Rak 4',
             ],
             [
-                'rak' => '200',
-                'baris' => '1',
-                'kategori_id' => 1
-            ],
-            [
-                'rak' => '200',
-                'baris' => '2',
-                'kategori_id' => 2
-            ],
-            [
-                'rak' => '200',
-                'baris' => '3',
-                'kategori_id' => 3
-            ],
-            [
-                'rak' => '200',
-                'baris' => '4',
-                'kategori_id' => 4
-            ],
-            [
-                'rak' => '400',
-                'baris' => '1',
-                'kategori_id' => 1
-            ],
-            [
-                'rak' => '400',
-                'baris' => '2',
-                'kategori_id' => 2
-            ],
-            [
-                'rak' => '400',
-                'baris' => '3',
-                'kategori_id' => 3
-            ],
-            [
-                'rak' => '400',
-                'baris' => '4',
-                'kategori_id' => 4
-            ],
-            [
-                'rak' => '600',
-                'baris' => '1',
-                'kategori_id' => 1
-            ],
-            [
-                'rak' => '600',
-                'baris' => '2',
-                'kategori_id' => 2
-            ],
-            [
-                'rak' => '600',
-                'baris' => '3',
-                'kategori_id' => 3
-            ],
-            [
-                'rak' => '600',
-                'baris' => '4',
-                'kategori_id' => 4
-            ],
-            [
-                'rak' => '800',
-                'baris' => '1',
-                'kategori_id' => 1
-            ],
-            [
-                'rak' => '800',
-                'baris' => '2',
-                'kategori_id' => 2
-            ],
-            [
-                'rak' => '800',
-                'baris' => '3',
-                'kategori_id' => 3
-            ],
-            [
-                'rak' => '800',
-                'baris' => '4',
-                'kategori_id' => 4
-            ],
+                'kode_rak' => '800',
+                'nama_rak' => 'Rak 5',
+            ]
         ];
         Rak::query()->insert($raks);
     }

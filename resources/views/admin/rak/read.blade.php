@@ -25,31 +25,22 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="mb-3">
-                            <label class="form-label">Rak</label>
-                            <input type="text" class="form-control @error('rak') is-invalid @enderror" placeholder="rak"
-                                name="rak" id="rak" value="{{ $rak->rak ?? '-' }}" disabled>
-                            @error('rak')
+                            <label class="form-label">Kode Rak</label>
+                            <input type="number" class="form-control @error('kode_rak') is-invalid @enderror"
+                                placeholder="kode_rak" name="kode_rak" id="kode_rak" value="{{ $rak->kode_rak ?? '-' }}"
+                                disabled>
+                            @error('kode_rak')
                                 <div class="alert alert-danger">{{ $message }}</div>
                             @enderror
                         </div>
                     </div>
                     <div class="col-md-12">
                         <div class="mb-3">
-                            <label class="form-label">Baris</label>
-                            <input type="number" class="form-control @error('baris') is-invalid @enderror"
-                                placeholder="baris" name="baris" id="baris" value="{{ $rak->baris ?? '-' }}" disabled>
-                            @error('baris')
-                                <div class="alert alert-danger">{{ $message }}</div>
-                            @enderror
-                        </div>
-                    </div>
-                    <div class="col-md-12">
-                        <div class="mb-3">
-                            <label class="form-label">Kategori</label>
-                            <input type="number" class="form-control @error('kategori_id') is-invalid @enderror"
-                                placeholder="kategori_id" name="kategori_id" id="kategori_id"
-                                value="{{ $rak->kategori_id ?? '-' }}" disabled>
-                            @error('kategori_id')
+                            <label class="form-label">Nama Rak</label>
+                            <input type="text" class="form-control @error('nama_rak') is-invalid @enderror"
+                                placeholder="nama_rak" name="nama_rak" id="nama_rak" value="{{ $rak->nama_rak ?? '-' }}"
+                                disabled>
+                            @error('nama_rak')
                                 <div class="alert alert-danger">{{ $message }}</div>
                             @enderror
                         </div>

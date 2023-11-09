@@ -10,12 +10,7 @@ class Rak extends Model
     use HasFactory;
 
     protected $table = 'rak';
-    protected $fillable = ['rak', 'baris', 'kategori_id'];
-
-    public function kategori()
-    {
-        return $this->belongsTo(Kategori::class);
-    }
+    protected $fillable = ['kode_rak', 'nama_rak'];
 
     public function buku()
     {
