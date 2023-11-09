@@ -22,12 +22,8 @@
         <div class="d-flex align-items-center">
             <div class="m-3">
                 <h3 class="font-weight-bold text-right">Visi</h3>
-                <p class="font-weight-bold text-right">Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque,
-                    expedita
-                    exercitationem
-                    iusto corporis
-                    repellat repudiandae ipsam, ab quo quae sed in libero blanditiis sunt doloremque provident! Repudiandae
-                    explicabo aperiam fugiat.</p>
+                <p class="font-weight-bold text-right">Menjadi Sumber Belajar dan Pembelajaran Dalam Lingkungan Madrasah
+                    Yang Berilmu dan Berakhlak Mulia</p>
             </div>
             <div class="text-right">
                 <img class="img rounded" src="{{ asset('assets/images/visi.png') }}" width="300" alt="visi">
@@ -41,10 +37,11 @@
             <div class="m-3">
                 <h3 class="font-weight-bold">Misi</h3>
                 <ul>
-                    <li class="font-weight-bold">Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
-                    <li class="font-weight-bold">Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
-                    <li class="font-weight-bold">Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
-                    <li class="font-weight-bold">Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
+                    <li class="font-weight-bold">Menjadi Perpustakaan Sebagai Jantungnya Pendidikan Madrasah</li>
+                    <li class="font-weight-bold">Memberikan Pelayanan Prima ( Santun, Ranah, Tegas, Tertib, dan Tangkas)
+                    </li>
+                    <li class="font-weight-bold">Menjadikan Perpustakaan Sebagai Tempat Belajar Yang Menyenangkan</li>
+                    <li class="font-weight-bold">Mewujudkan Budaya Dan Minat Baca Yang Efektif Serta Menyenangkan</li>
                 </ul>
             </div>
         </div>

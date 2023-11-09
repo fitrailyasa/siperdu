@@ -11,7 +11,7 @@ class KoleksiController extends Controller
 {
     public function index()
     {
-        $bukus = Buku::all();
+        $bukus = Buku::latest('id')->get();
         return view('client.koleksi-buku', compact('bukus'));
     }
 
