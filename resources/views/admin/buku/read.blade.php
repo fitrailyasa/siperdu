@@ -94,10 +94,10 @@
                     <div class="col-md-4">
                         <div class="mb-3">
                             <label class="form-label">No Inventaris</label>
-                            <input type="number" class="form-control @error('no_inventaris') is-invalid @enderror"
-                                placeholder="No Inventaris" name="no_inventaris" id="no_inventaris"
-                                value="{{ $buku->no_inventaris }}" disabled>
-                            @error('no_inventaris')
+                            <input type="number" class="form-control @error('jumlah') is-invalid @enderror"
+                                placeholder="No Inventaris" name="jumlah" id="jumlah"
+                                value="{{ $buku->jumlah }}" disabled>
+                            @error('jumlah')
                                 <div class="alert alert-danger">{{ $message }}</div>
                             @enderror
                         </div>

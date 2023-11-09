@@ -15,23 +15,22 @@ class CreateBukuTable extends Migration
     {
         Schema::create('buku', function (Blueprint $table) {
             $table->id();
-            $table->string('judul');
-            $table->date('tanggal');
-            $table->string('sampul');
-            $table->string('penulis');
-            $table->string('tahun_terbit');
-            $table->string('tempat_terbit');
-            $table->integer('no_inventaris');
-            $table->string('sumber_buku');
-            $table->string('keterangan');
-            $table->foreignId('penerbit_id');
-            $table->foreignId('kategori_id');
-            $table->foreignId('rak_id');
-            $table->integer('stok');
-            $table->integer('halaman');
-            $table->double('tinggi');
-            $table->string('ddc');
-            $table->string('isbn');
+            $table->string('judul')->nullable();
+            $table->date('tanggal')->nullable();
+            $table->string('sampul')->nullable();
+            $table->string('penulis')->nullable();
+            $table->string('tahun_terbit')->nullable();
+            $table->string('tempat_terbit')->nullable();
+            $table->string('sumber_buku')->nullable();
+            $table->string('keterangan')->nullable();
+            $table->string('penerbit_id')->nullable();
+            $table->foreignId('kategori_id')->nullable();
+            $table->string('rak_id')->nullable();
+            $table->integer('stok')->nullable();
+            $table->integer('halaman')->nullable();
+            $table->string('tinggi')->nullable();
+            $table->string('ddc')->nullable();
+            $table->string('isbn')->nullable();
             $table->timestamps();
         });
     }
