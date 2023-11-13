@@ -14,7 +14,7 @@
 @section('content')
 
     <!-- Detail kategori -->
-    <div class="col-lg-12 col-lg-12 form-wrapper" id="detail-kategori">
+    <div class="col-lg-12 form-wrapper" id="detail-kategori">
         <div class="card">
             <div class="card-body">
                 @if (auth()->user()->roles_id == 1)
@@ -31,6 +31,17 @@
                                 placeholder="nama" name="nama" id="nama" value="{{ $kategori->nama ?? '-' }}"
                                 disabled>
                             @error('nama')
+                                <div class="alert alert-danger">{{ $message }}</div>
+                            @enderror
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="mb-3">
+                            <label class="form-label">Gambar</label><br>
+                            <img src="{{ asset('assets/images/kategori') }}/{{ $kategori->gambar }}" class="img-fluid">
+                            @error('gambar')
                                 <div class="alert alert-danger">{{ $message }}</div>
                             @enderror
                         </div>

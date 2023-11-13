@@ -7,7 +7,7 @@
 @section('content')
 
     <!-- Detail Buku -->
-    <div class="col-lg-12 col-lg-12 form-wrapper" id="detail-buku">
+    <div class="col-lg-12 form-wrapper" id="detail-buku">
         <div class="card m-4 p-4">
             <div class="d-flex justify-content-around">
                 <div>

@@ -14,7 +14,7 @@
 @section('content')
 
     <!-- Edit rak -->
-    <div class="col-lg-12 col-lg-12 form-wrapper" id="edit-rak">
+    <div class="col-lg-12 form-wrapper" id="edit-rak">
         <div class="card">
             <div class="card-body">
                 @if (auth()->user()->roles_id == 1)

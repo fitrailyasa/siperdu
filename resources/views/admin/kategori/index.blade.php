@@ -20,6 +20,7 @@
                     <thead>
                         <tr>
                             <th>No</th>
+                            <th>Gambar</th>
                             <th>Nama</th>
                             <th>More</th>
                         </tr>
@@ -28,6 +29,8 @@
                         @foreach ($kategoris as $kategori)
                             <tr>
                                 <td>{{ $loop->iteration }}</td>
+                                <td><img src="{{ asset('assets/images/kategori') }}/{{ $kategori->gambar }}" width="100">
+                                </td>
                                 <td>{{ $kategori->nama ?? '-' }}</td>
                                 <td class="manage-row">
                                     @if (auth()->user()->roles_id == 1)
@@ -73,6 +76,7 @@
                     <tfoot>
                         <tr>
                             <th>No</th>
+                            <th>Gambar</th>
                             <th>Nama</th>
                             <th>More</th>
                         </tr>

@@ -13,7 +13,7 @@
 @section('content')
 
     <!-- Tambah transaksi -->
-    <div class="col-lg-12 col-lg-12 form-wrapper" id="tambah-transaksi">
+    <div class="col-lg-12 form-wrapper" id="tambah-transaksi">
         <div class="card">
             <div class="card-body">
                 @if (auth()->user()->roles_id == 1)

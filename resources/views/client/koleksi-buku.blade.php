@@ -6,9 +6,22 @@
 
 @section('content')
 
-    <div class="text-center my-3">
-        <img class="img img-fluid rounded" src="{{ asset('assets/images/collection.png') }}" width="1150" alt="collection">
-    </div>
+    <style>
+        /* Add your custom styles here */
+        .image-container {
+            position: relative;
+            text-align: center;
+        }
+
+        .text-on-image {
+            position: absolute;
+            top: 88%;
+            left: 40%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 15px;
+        }
+    </style>
 
     <div>
         <h3 class="text-center text-dark font-weight-bold py-3">Collection</h3>
@@ -22,27 +35,26 @@
             </div>
         </form>
 
-        <h3 class="text-dark font-weight-bold p-3 mx-3">Buku Terbaru</h3>
         <div class="row m-3">
             @php $count = 0; @endphp
-            @foreach ($bukus as $buku)
-                @if ($count < 6)
-                    <div class="col-xl-2 col-md-6 col-6 mb-3">
-                        <a class="text-decoration-none" href="{{ route('detail-buku', $buku->id) }}">
+            @foreach ($kategoris as $kategori)
+                @if ($count < 9)
+                    <div class="col-xl-2 col-md-3 col-4 mb-3">
+                        <a class="text-decoration-none" href="#">
                             <div class="card text-start rounded-4">
-                                <div class="text-center p-2">
-                                    @if ($buku->sampul)
+                                <div class="image-container text-center p-2">
+                                    @if ($kategori->gambar)
                                         <img height="280" class="img img-fluid"
-                                            src="{{ asset('assets/images') }}/{{ $buku->sampul }}"
-                                            alt="{{ $buku->judul }}">
+                                            src="{{ asset('assets/images/kategori') }}/{{ $kategori->gambar }}"
+                                            alt="{{ $kategori->nama }}">
                                     @else
                                         <img height="280" class="img img-fluid"
-                                            src="{{ asset('assets/images/default.jpg') }}" alt="{{ $buku->judul }}">
+                                            src="{{ asset('assets/images/kategori/default.jpg') }}"
+                                            alt="{{ $kategori->nama }}">
                                     @endif
                                 </div>
-                                <div class="p-3 border-top">
-                                    <h4 class="card-title">{{ $buku->judul }}</h4>
-                                    <p class="card-text fw-bold">{{ $buku->kategori->nama }}</p>
+                                <div class="text-on-image">
+                                    <h4 class="card-title small font-weight-bold">{{ $kategori->nama }}</h4>
                                 </div>
                             </div>
                         </a>
@@ -51,6 +63,7 @@
                 @endif
             @endforeach
         </div>
+
 
         <h3 class="text-dark font-weight-bold p-3 mx-3">Agama</h3>
         <div class="row m-3">
@@ -63,16 +76,15 @@
                                 <div class="text-center p-2">
                                     @if ($buku->sampul)
                                         <img height="280" class="img img-fluid"
-                                            src="{{ asset('assets/images') }}/{{ $buku->sampul }}"
+                                            src="{{ asset('assets/images/buku') }}/{{ $buku->sampul }}"
                                             alt="{{ $buku->judul }}">
                                     @else
                                         <img height="280" class="img img-fluid"
-                                            src="{{ asset('assets/images/default.jpg') }}" alt="{{ $buku->judul }}">
+                                            src="{{ asset('assets/images/buku/default.jpg') }}" alt="{{ $buku->judul }}">
                                     @endif
                                 </div>
-                                <div class="p-3 border-top">
-                                    <h4 class="card-title">{{ $buku->judul }}</h4>
-                                    <p class="card-text fw-bold">{{ $buku->kategori->nama }}</p>
+                                <div class="text-on-image">
+                                    <h4 class="card-title small font-weight-bold">{{ $buku->judul }}</h4>
                                 </div>
                             </div>
                         </a>
@@ -93,16 +105,15 @@
                                 <div class="text-center p-2">
                                     @if ($buku->sampul)
                                         <img height="280" class="img img-fluid"
-                                            src="{{ asset('assets/images') }}/{{ $buku->sampul }}"
+                                            src="{{ asset('assets/images/buku') }}/{{ $buku->sampul }}"
                                             alt="{{ $buku->judul }}">
                                     @else
                                         <img height="280" class="img img-fluid"
-                                            src="{{ asset('assets/images/default.jpg') }}" alt="{{ $buku->judul }}">
+                                            src="{{ asset('assets/images/buku/default.jpg') }}" alt="{{ $buku->judul }}">
                                     @endif
                                 </div>
-                                <div class="p-3 border-top">
-                                    <h4 class="card-title">{{ $buku->judul }}</h4>
-                                    <p class="card-text fw-bold">{{ $buku->kategori->nama }}</p>
+                                <div class="text-on-image">
+                                    <h4 class="card-title small font-weight-bold">{{ $buku->judul }}</h4>
                                 </div>
                             </div>
                         </a>

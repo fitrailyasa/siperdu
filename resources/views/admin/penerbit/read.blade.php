@@ -14,7 +14,7 @@
 @section('content')
 
     <!-- Detail penerbit -->
-    <div class="col-lg-12 col-lg-12 form-wrapper" id="detail-penerbit">
+    <div class="col-lg-12 form-wrapper" id="detail-penerbit">
         <div class="card">
             <div class="card-body">
                 @if (auth()->user()->roles_id == 1)

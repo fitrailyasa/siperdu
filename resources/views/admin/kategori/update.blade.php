@@ -14,7 +14,7 @@
 @section('content')
 
     <!-- Edit kategori -->
-    <div class="col-lg-12 col-lg-12 form-wrapper" id="edit-kategori">
+    <div class="col-lg-12 form-wrapper" id="edit-kategori">
         <div class="card">
             <div class="card-body">
                 @if (auth()->user()->roles_id == 1)
@@ -30,6 +30,28 @@
                             <input type="text" class="form-control @error('nama') is-invalid @enderror"
                                 placeholder="nama" name="nama" id="nama" value="{{ $kategori->nama }}" required>
                             @error('nama')
+                                <div class="alert alert-danger">{{ $message }}</div>
+                            @enderror
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="mb-3">
+                            <label class="form-label">Gambar</label><br>
+                            <img src="{{ asset('assets/images/kategori') }}/{{ $kategori->gambar }}" class="img-fluid">
+                            @error('gambar')
+                                <div class="alert alert-danger">{{ $message }}</div>
+                            @enderror
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="mb-3">
+                            <input type="file" class="form-control @error('gambar') is-invalid @enderror"
+                                placeholder="gambar" name="gambar" id="gambar" value="{{ $kategori->gambar }}" required>
+                            @error('gambar')
                                 <div class="alert alert-danger">{{ $message }}</div>
                             @enderror
                         </div>

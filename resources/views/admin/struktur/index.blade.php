@@ -6,7 +6,7 @@
 
 @section('content')
 
-    <div class="col-lg-12 col-lg-12 form-wrapper" id="edit-struktur">
+    <div class="col-lg-12 form-wrapper" id="edit-struktur">
         <div class="card">
             <div class="card-body">
                 @if (auth()->user()->roles_id == 1)

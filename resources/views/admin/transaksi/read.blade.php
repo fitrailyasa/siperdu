@@ -13,7 +13,7 @@
 @section('content')
 
     <!-- Detail transaksi -->
-    <div class="col-lg-12 col-lg-12 form-wrapper" id="detail-transaksi">
+    <div class="col-lg-12 form-wrapper" id="detail-transaksi">
         <div class="card">
             <div class="card-body">
                 <div class="row">

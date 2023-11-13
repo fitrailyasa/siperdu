@@ -14,7 +14,7 @@
 @section('content')
 
     <!--Tambah user-->
-    <div class="col-lg-12 col-lg-12 form-wrapper" id="tambah-user">
+    <div class="col-lg-12 form-wrapper" id="tambah-user">
         <div class="card">
             <div class="card-body">
                 @if (auth()->user()->roles_id == 1)
