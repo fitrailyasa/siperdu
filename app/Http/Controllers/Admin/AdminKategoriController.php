@@ -21,9 +21,17 @@ class AdminKategoriController extends Controller
 
     public function store(Request $request)
     {
-        $request->validate([
-            'nama' => 'required|max:255',
+        $kategori = Kategori::create([
+            'nama' => $request->nama,
         ]);
+
+        if ($request->hasFile('gambar')) {
+            $gambar = $request->file('gambar');
+            $nama_file = time() . '_' . $gambar->getClientOriginalName();
+            $kategori->gambar = $nama_file;
+            $kategori->update();
+            $gambar->move(public_path('assets/kategori/'), $nama_file);
+        }
 
         Kategori::create($request->all());
 
@@ -44,12 +52,18 @@ class AdminKategoriController extends Controller
 
     public function update(Request $request, $id)
     {
+        $kategori = Kategori::where('id', $id)->first();
         $request->validate([
             'nama' => 'required|max:255',
         ]);
 
-        $kategori = Kategori::findOrFail($id);
-        $kategori->update($request->all());
+        if ($request->hasFile('gambar')) {
+            $gambar = $request->file('gambar');
+            $nama_file = time() . '_' . $gambar->getClientOriginalName();
+            $kategori->gambar = $nama_file;
+            $kategori->update();
+            $gambar->move(public_path('assets/kategori/'), $nama_file);
+        }
 
         return redirect()->route('admin.kategori.index')->with('sukses', 'Berhasil Edit Data!');
     }

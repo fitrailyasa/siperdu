@@ -10,9 +10,9 @@
             <!-- small box -->
             <div class="small-box bg-info">
                 <div class="inner">
-                    <h3></h3>
+                    <h3>{{ $bukus }}</h3>
 
-                    <p></p>
+                    <p>Buku</p>
                 </div>
                 <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
@@ -22,9 +22,9 @@
             <!-- small box -->
             <div class="small-box bg-success">
                 <div class="inner">
-                    <h3></h3>
+                    <h3>{{ $kategoris }}</h3>
 
-                    <p></p>
+                    <p>Kategori</p>
                 </div>
                 <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
@@ -34,9 +34,9 @@
             <!-- small box -->
             <div class="small-box bg-warning">
                 <div class="inner">
-                    <h3></h3>
+                    <h3>{{ $raks }}</h3>
 
-                    <p></p>
+                    <p>Rak</p>
                 </div>
                 <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
@@ -46,9 +46,9 @@
             <!-- small box -->
             <div class="small-box bg-danger">
                 <div class="inner">
-                    <h3></h3>
+                    <h3>{{ $users }}</h3>
 
-                    <p></p>
+                    <p>Anggota</p>
                 </div>
                 <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>

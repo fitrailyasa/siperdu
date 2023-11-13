@@ -23,6 +23,10 @@
         }
     </style>
 
+    <div class="text-center my-3">
+        <img class="img img-fluid rounded" src="{{ asset('assets/images/collection.png') }}" width="1150" alt="home">
+    </div>
+
     <div>
         <h3 class="text-center text-dark font-weight-bold py-3">Collection</h3>
         <form action="{{ route('search') }}" method="GET">
