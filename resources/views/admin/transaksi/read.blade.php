@@ -30,11 +30,11 @@
                     </div>
                     <div class="col-md-4">
                         <div class="mb-3">
-                            <label class="form-label">Peminjam id</label>
-                            <input type="number" class="form-control @error('peminjam_id') is-invalid @enderror"
-                                placeholder="peminjam_id" value="{{ $transaksi->peminjam_id ?? '-' }}" name="peminjam_id"
-                                id="peminjam_id" disabled>
-                            @error('peminjam_id')
+                            <label class="form-label">Nama Peminjam</label>
+                            <input type="text" class="form-control @error('peminjam') is-invalid @enderror"
+                                placeholder="peminjam" value="{{ $transaksi->peminjam ?? '-' }}" name="peminjam"
+                                id="peminjam" disabled>
+                            @error('peminjam')
                                 <div class="alert alert-danger">{{ $message }}</div>
                             @enderror
                         </div>

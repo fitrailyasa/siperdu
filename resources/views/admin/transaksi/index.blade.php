@@ -19,7 +19,6 @@
                     <thead>
                         <tr>
                             <th>No</th>
-                            <th>Kode Pinjam</th>
                             <th>Peminjam</th>
                             <th>Petugas Pinjam</th>
                             <th>Petugas Kembali</th>
@@ -35,12 +34,25 @@
                         @foreach ($transaksis as $transaksi)
                             <tr>
                                 <td>{{ $loop->iteration }}</td>
-                                <td>{{ $transaksi->kode_pinjam ?? '-' }}</td>
-                                <td>{{ $transaksi->peminjam_id ?? '-' }}</td>
+                                <td>{{ $transaksi->peminjam ?? '-' }}</td>
                                 <td>{{ $transaksi->petugas_pinjam ?? '-' }}</td>
                                 <td>{{ $transaksi->petugas_kembali ?? '-' }}</td>
-                                <td>{{ $transaksi->status ?? '-' }}</td>
-                                <td>{{ $transaksi->denda ?? '-' }}</td>
+                                <td>
+                                    @if ($transaksi->status == 'Sedang Dipinjam')
+                                        <p class="btn-sm btn-warning">{{ $transaksi->status }}</p>
+                                    @elseif ($transaksi->status == 'Sudah Dikembalikan')
+                                        <p class="btn-sm btn-success">{{ $transaksi->status }}</p>
+                                    @else
+                                        {{ $transaksi->status ?? '' }}
+                                    @endif
+                                </td>
+                                <td>
+                                    @if ($transaksi->denda > 0)
+                                        <p class="btn-sm btn-danger">{{ $transaksi->denda }}</p>
+                                    @else
+                                        {{ $transaksi->denda ?? '' }}
+                                    @endif
+                                </td>
                                 <td>{{ $transaksi->tanggal_pinjam ?? '-' }}</td>
                                 <td>{{ $transaksi->tanggal_kembali ?? '-' }}</td>
                                 <td>{{ $transaksi->tanggal_pengembalian ?? '-' }}</td>
@@ -89,7 +101,6 @@
                     <tfoot>
                         <tr>
                             <th>No</th>
-                            <th>Kode Pinjam</th>
                             <th>Peminjam</th>
                             <th>Petugas Pinjam</th>
                             <th>Petugas Kembali</th>

@@ -21,6 +21,12 @@ class AdminUserController extends Controller
         return view('admin.kartu.index', compact('kartus'));
     }
 
+    public function showKartu(string $id)
+    {
+        $kartu = User::where('id', $id)->first();
+        return view('admin.kartu.read', compact('kartu'));
+    }
+
     public function verif()
     {
         $users = User::where('roles_id', 99)->get();

@@ -18,7 +18,7 @@ class AdminStrukturController extends Controller
 
     public function update(Request $request, $id)
     {
-        $struktur = struktur::findOrFail($id);
+        $struktur = Struktur::findOrFail($id);
 
         if ($request->hasFile('gambar')) {
             $gambar = $request->file('gambar');

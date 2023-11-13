@@ -55,6 +55,7 @@ Route::middleware(['auth'])->group(function () {
       Route::resource('transaksi', AdminTransaksiController::class);
       Route::resource('struktur', AdminStrukturController::class);
       Route::get('/kartu', [AdminUserController::class, 'indexKartu'])->name('kartu');
+      Route::get('/kartu/{id}', [AdminUserController::class, 'showKartu'])->name('cetak-kartu');
     });
   
 });

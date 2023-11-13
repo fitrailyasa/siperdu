@@ -6,6 +6,33 @@
 
 @section('content')
 
+    <style>
+        /* Add your custom styles here */
+        .image-container {
+            position: relative;
+            text-align: center;
+        }
+
+        .text-on-image2 {
+            position: absolute;
+            top: 50%;
+            left: 29%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            border-radius: 20px;
+            font-size: 15px;
+        }
+
+        .text-on-image {
+            position: absolute;
+            top: 60%;
+            left: 48%;
+            transform: translate(-50%, -50%);
+            color: black;
+            font-size: 15px;
+        }
+    </style>
+
     <div class="card">
         <!-- /.card-header -->
         <div class="card-body">
@@ -23,22 +50,30 @@
                             <tr>
                                 <td>{{ $loop->iteration }}</td>
                                 <td>
-                                    <div class="col-md-6">
-                                        <div class="card bg-success text-white">
-                                            <div class="card-body">
-                                                <img class="img img-fluid rounded mx-auto d-block" width="100px"
-                                                    src="{{ asset('assets/profile/' . $kartu->gambar_user) }}"
-                                                    alt="">
-                                                <h5 class="card-title">{{ $kartu->nama ?? '-' }}</h5>
-                                                <p class="card-text">{{ $kartu->nisn ?? '-' }}</p>
-                                                <p class="card-text">{{ $kartu->roles->nama_roles ?? '-' }} Perpustkaan</p>
-                                            </div>
+                                    <div class="image-container">
+                                        <img class="img-fluid" width="400" src="{{ asset('assets/images/kartu.png') }}"
+                                            alt="">
+                                        <div class="text-on-image2">
+                                            <img class="img img-fluid rounded mx-auto d-block" width="70px"
+                                                src="{{ asset('assets/profile/' . $kartu->gambar_user) }}" alt="">
+                                        </div>
+                                        <div class="text-on-image text-left">
+                                            <h5 class="small font-weight-bold">Nama
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:
+                                                {{ $kartu->nama ?? '-' }}
+                                            </h5>
+                                            <h5 class="small font-weight-bold">NIS/NISN &nbsp;: {{ $kartu->nisn ?? '-' }}
+                                            </h5>
+                                            <h5 class="small font-weight-bold">Status
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:
+                                                {{ $kartu->roles->nama_roles ?? '-' }}
+                                                Perpustakaan</h5>
                                         </div>
                                     </div>
                                 </td>
                                 <td class="manage-row">
                                     @if (auth()->user()->roles_id == 1)
-                                        <a href="{{ route('admin.user.show', $kartu->id) }}"
+                                        <a href="{{ route('admin.cetak-kartu', $kartu->id) }}"
                                             class="btn-sm btn-success">Detail</a>
                                     @endif
                                 </td>
