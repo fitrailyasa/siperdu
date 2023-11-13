@@ -11,7 +11,7 @@ class AdminPenerbitController extends Controller
 {
     public function index()
     {
-        $penerbits = Penerbit::all();
+        $penerbits = Penerbit::latest()->get();
         $bukus = Buku::all();
         return view('admin.penerbit.index', compact('penerbits', 'bukus'));
     }

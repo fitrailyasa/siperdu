@@ -11,7 +11,7 @@ class AdminTransaksiController extends Controller
 {
     public function index()
     {
-        $transaksis = Peminjaman::all();
+        $transaksis = Peminjaman::latest()->get();
         return view('admin.transaksi.index', compact('transaksis'));
     }
 

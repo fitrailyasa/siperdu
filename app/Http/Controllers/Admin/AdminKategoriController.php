@@ -10,7 +10,7 @@ class AdminKategoriController extends Controller
 {
     public function index()
     {
-        $kategoris = Kategori::all();
+        $kategoris = Kategori::latest()->get();
         return view('admin.kategori.index', compact('kategoris'));
     }
 

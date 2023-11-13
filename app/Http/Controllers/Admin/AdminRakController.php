@@ -11,7 +11,7 @@ class AdminRakController extends Controller
 {
     public function index()
     {
-        $raks = Rak::all();
+        $raks = Rak::latest()->get();
         return view('admin.rak.index', compact('raks'));
     }
 
