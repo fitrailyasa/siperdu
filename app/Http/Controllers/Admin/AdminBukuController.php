@@ -28,14 +28,12 @@ class AdminBukuController extends Controller
 
     public function store(Request $request)
     {
-        $request->validate([
+        $buku = Buku::create([
             'judul' => 'required|max:255',
             'tanggal' => 'required|date',
-            'sampul' => 'required|max:2048',
             'penulis' => 'required|max:255',
             'tahun_terbit' => 'required|max:255',
             'tempat_terbit' => 'required|max:255',
-            'jumlah' => 'required|integer',
             'sumber_buku' => 'required|max:255',
             'keterangan' => 'required|max:255',
             'penerbit_id' => 'required',
@@ -48,7 +46,13 @@ class AdminBukuController extends Controller
             'isbn' => 'required|max:255',
         ]);
 
-        Buku::create($request->all());
+        if ($request->hasFile('sampul')) {
+            $sampul = $request->file('sampul');
+            $nama_file = time() . '_' . $sampul->getClientOriginalName();
+            $buku->sampul = $nama_file;
+            $buku->update();
+            $sampul->move(public_path('assets/images/buku/'), $nama_file);
+        }
 
         return redirect()->route('admin.buku.index')->with('sukses', 'Berhasil Tambah Data!');
     }
@@ -70,10 +74,10 @@ class AdminBukuController extends Controller
 
     public function update(Request $request, $id)
     {
+        $buku = Buku::where('id', $id)->first();
         $request->validate([
             'judul' => 'required|max:255',
             'tanggal' => 'required|date',
-            'sampul' => 'required|max:255',
             'penulis' => 'required|max:255',
             'tahun_terbit' => 'required|max:255',
             'tempat_terbit' => 'required|max:255',
@@ -89,8 +93,13 @@ class AdminBukuController extends Controller
             'isbn' => 'required|max:255',
         ]);
 
-        $buku = Buku::findOrFail($id);
-        $buku->update($request->all());
+        if ($request->hasFile('sampul')) {
+            $sampul = $request->file('sampul');
+            $nama_file = time() . '_' . $sampul->getClientOriginalName();
+            $buku->sampul = $nama_file;
+            $buku->update();
+            $sampul->move(public_path('assets/images/buku/'), $nama_file);
+        }
 
         return redirect()->route('admin.buku.index')->with('sukses', 'Berhasil Edit Data!');
     }
