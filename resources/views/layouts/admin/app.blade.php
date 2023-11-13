@@ -156,11 +156,6 @@
             </section>
             <!-- /.content -->
         </div>
-        <!-- /.content-wrapper -->
-        <footer class="main-footer fixed-bottom">
-            <strong>Copyright &copy; 2023 <a href="#">SIPERDU</a>.</strong>
-            All rights reserved.
-        </footer>
 
         <!-- Control Sidebar -->
         <aside class="control-sidebar control-sidebar-dark">

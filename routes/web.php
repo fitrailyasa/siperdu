@@ -32,7 +32,8 @@ Route::get('/kontak', function () {return view('client.kontak');})->name('kontak
 
 Route::get('/koleksi-buku', [KoleksiController::class, 'index'])->name('koleksi-buku');
 Route::get('/search', [KoleksiController::class, 'search'])->name('search');
-Route::get('/detail-buku/{id}', [KoleksiController::class, 'show'])->name('detail-buku');
+Route::get('/kategori-buku/{id}', [KoleksiController::class, 'showKategori'])->name('kategori-buku');
+Route::get('/detail-buku/{id}', [KoleksiController::class, 'showBuku'])->name('detail-buku');
 
 Auth::routes();
 

@@ -1,6 +1,6 @@
 @extends('layouts.client.app')
 
-@section('title', 'Hasil Pencarian')
+@section('title', 'Kategori Buku')
 
 @section('textCollection', 'text-success')
 
@@ -23,7 +23,7 @@
         }
     </style>
 
-    <h3 class="text-dark font-weight-bold p-3 mx-3">Hasil Pencarian</h3>
+    <h3 class="text-dark font-weight-bold p-3 mx-3">Kategori Buku {{ $kategoris->nama }}</h3>
     <div class="row m-3">
         @foreach ($bukus as $buku)
             <div class="col-xl-2 col-md-6 col-6 mb-3">

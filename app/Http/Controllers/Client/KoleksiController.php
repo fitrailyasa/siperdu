@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Client;
 
 use App\Models\Buku;
+
 use App\Models\Kategori;
 use Illuminate\Support\Facades\Hash;
 use App\Http\Controllers\Controller;
@@ -17,7 +18,14 @@ class KoleksiController extends Controller
         return view('client.koleksi-buku', compact('bukus', 'kategoris'));
     }
 
-    public function show($id)
+    public function showKategori(string $id)
+    {
+        $kategoris = Kategori::findOrFail($id);
+        $bukus = Buku::where('kategori_id', $id)->get();
+        return view('client.kategori-buku', compact('kategoris', 'bukus'));
+    }
+
+    public function showBuku($id)
     {
         $buku = Buku::find($id);
         return view('client.detail-buku', compact('buku'));

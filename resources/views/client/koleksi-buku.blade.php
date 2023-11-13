@@ -40,7 +40,7 @@
             @foreach ($kategoris as $kategori)
                 @if ($count < 9)
                     <div class="col-xl-2 col-md-3 col-4 mb-3">
-                        <a class="text-decoration-none" href="#">
+                        <a class="text-decoration-none" href="{{ route('kategori-buku', $kategori->id) }}">
                             <div class="card text-start rounded-4">
                                 <div class="image-container text-center p-2">
                                     @if ($kategori->gambar)
@@ -63,7 +63,6 @@
                 @endif
             @endforeach
         </div>
-
 
         <h3 class="text-dark font-weight-bold p-3 mx-3">Agama</h3>
         <div class="row m-3">

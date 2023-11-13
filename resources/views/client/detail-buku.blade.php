@@ -11,8 +11,8 @@
         <div class="card m-4 p-4">
             <div class="d-flex justify-content-around">
                 <div>
-                    <img class="img img-fluid rounded" width="300" src="{{ asset('assets/images') }}/{{ $buku->sampul }}"
-                        alt="{{ $buku->judul }}">
+                    <img class="img img-fluid rounded" width="300"
+                        src="{{ asset('assets/images/buku') }}/{{ $buku->sampul }}" alt="{{ $buku->judul }}">
                 </div>
                 <div>
                     <h4 class="card-title">{{ $buku->judul ?? '-' }}</h4>
