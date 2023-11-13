@@ -13,6 +13,15 @@
             text-align: center;
         }
 
+        .text-on-image2 {
+            position: absolute;
+            top: 88%;
+            left: 20%;
+            transform: translate(-50%, -50%);
+            color: grey;
+            font-size: 15px;
+        }
+
         .text-on-image {
             position: absolute;
             top: 88%;
@@ -39,33 +48,35 @@
             </div>
         </form>
 
-        <div class="row m-3">
-            @php $count = 0; @endphp
-            @foreach ($kategoris as $kategori)
-                @if ($count < 9)
-                    <div class="col-xl-2 col-md-3 col-4 mb-3">
-                        <a class="text-decoration-none" href="{{ route('kategori-buku', $kategori->id) }}">
-                            <div class="card text-start rounded-4">
-                                <div class="image-container text-center p-2">
-                                    @if ($kategori->gambar)
-                                        <img height="280" class="img img-fluid"
-                                            src="{{ asset('assets/images/kategori') }}/{{ $kategori->gambar }}"
-                                            alt="{{ $kategori->nama }}">
-                                    @else
-                                        <img height="280" class="img img-fluid"
-                                            src="{{ asset('assets/images/kategori/default.jpg') }}"
-                                            alt="{{ $kategori->nama }}">
-                                    @endif
+        <div class="mx-4">
+            <div class="row">
+                @php $count = 0; @endphp
+                @foreach ($kategoris as $kategori)
+                    @if ($count < 9)
+                        <div class="col-md-4 col-sm-6 mb-4">
+                            <a class="text-decoration-none" href="{{ route('kategori-buku', $kategori->id) }}">
+                                <div class="card text-start rounded-4">
+                                    <div class="image-container text-center p-2">
+                                        @if ($kategori->gambar)
+                                            <img height="280" class="img img-fluid"
+                                                src="{{ asset('assets/images/kategori') }}/{{ $kategori->gambar }}"
+                                                alt="{{ $kategori->nama }}">
+                                        @else
+                                            <img height="280" class="img img-fluid"
+                                                src="{{ asset('assets/images/kategori/default.jpg') }}"
+                                                alt="{{ $kategori->nama }}">
+                                        @endif
+                                    </div>
+                                    <div class="text-on-image2">
+                                        <h4 class="card-title small font-weight-bold">{{ $kategori->nama }}</h4>
+                                    </div>
                                 </div>
-                                <div class="text-on-image">
-                                    <h4 class="card-title small font-weight-bold">{{ $kategori->nama }}</h4>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    @php $count++; @endphp
-                @endif
-            @endforeach
+                            </a>
+                        </div>
+                        @php $count++; @endphp
+                    @endif
+                @endforeach
+            </div>
         </div>
 
         <h3 class="text-dark font-weight-bold p-3 mx-3">Agama</h3>
