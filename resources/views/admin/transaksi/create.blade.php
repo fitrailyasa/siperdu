@@ -72,8 +72,8 @@
                         <div class="mb-3">
                             <label class="form-label">Status</label>
                             <select class="form-select @error('status') is-invalid @enderror" name="status" id="status">
-                                <option value="dikembalikan">Dikembalikan</option>
-                                <option value="dipinjam">Dipinjam</option>
+                                <option value="Sedang Dipinjam">Sedang Dipinjam</option>
+                                <option value="Sudah Dikembalikan">Sudah Dikembalikan</option>
                             </select>
                             @error('status')
                                 <div class="alert alert-danger">{{ $message }}</div>

@@ -15,12 +15,6 @@ class AdminUserController extends Controller
         return view('admin.user.index', compact('users'));
     }
 
-    public function indexKartu()
-    {
-        $kartus = User::all();
-        return view('admin.kartu.index', compact('kartus'));
-    }
-
     public function showKartu(string $id)
     {
         $kartu = User::where('id', $id)->first();

@@ -76,9 +76,9 @@
                     <div class="col-md-4">
                         <div class="mb-3">
                             <label class="form-label">Status</label>
-                            <input type="text" class="form-control @error('status') is-invalid @enderror"
-                                placeholder="status" value="{{ $transaksi->status }}" name="status" id="status"
-                                required>
+                            <select class="form-select @error('status') is-invalid @enderror" name="status" id="status">
+                                <option value="pinjam" {{ $transaksi->status == 'pinjam' ? 'selected' : '' }}>
+                            </select>
                             @error('status')
                                 <div class="alert alert-danger">{{ $message }}</div>
                             @enderror

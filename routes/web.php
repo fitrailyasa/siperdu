@@ -9,6 +9,7 @@ use App\Http\Controllers\Admin\AdminDashboardController;
 use App\Http\Controllers\Admin\AdminUserController;
 use App\Http\Controllers\Admin\AdminBukuController;
 use App\Http\Controllers\Admin\AdminKategoriController;
+use App\Http\Controllers\Admin\AdminKartuController;
 use App\Http\Controllers\Admin\AdminPenerbitController;
 use App\Http\Controllers\Admin\AdminRakController;
 use App\Http\Controllers\Admin\AdminTransaksiController;
@@ -54,8 +55,7 @@ Route::middleware(['auth'])->group(function () {
       Route::resource('rak', AdminRakController::class);
       Route::resource('transaksi', AdminTransaksiController::class);
       Route::resource('struktur', AdminStrukturController::class);
-      Route::get('/kartu', [AdminUserController::class, 'indexKartu'])->name('kartu');
-      Route::get('/kartu/{id}', [AdminUserController::class, 'showKartu'])->name('cetak-kartu');
+      Route::resource('kartu', AdminKartuController::class);
     });
   
 });

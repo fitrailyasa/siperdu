@@ -73,8 +73,10 @@
                                 </td>
                                 <td class="manage-row">
                                     @if (auth()->user()->roles_id == 1)
-                                        <a href="{{ route('admin.cetak-kartu', $kartu->id) }}"
+                                        <a href="{{ route('admin.kartu.show', $kartu->id) }}"
                                             class="btn-sm btn-success">Detail</a>
+                                        <a href="{{ route('admin.kartu.edit', $kartu->id) }}"
+                                            class="btn-sm btn-warning">Edit</a>
                                     @endif
                                 </td>
                             </tr>

@@ -85,7 +85,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a href="{{ route('admin.kartu') }}" class="nav-link text-white @yield('kartu')">
+                <a href="{{ route('admin.kartu.index') }}" class="nav-link text-white @yield('kartu')">
                     <i class="nav-icon fas fa-id-card"></i>
                     <p>
                         Kartu Perpustakaan
