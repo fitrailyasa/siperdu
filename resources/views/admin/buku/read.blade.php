@@ -182,7 +182,7 @@
                     <div class="col-md-4">
                         <div class="mb-3">
                             <label class="form-label">Tinggi</label>
-                            <input type="number" class="form-control @error('tinggi') is-invalid @enderror"
+                            <input type="text" class="form-control @error('tinggi') is-invalid @enderror"
                                 placeholder="Tinggi" name="tinggi" id="tinggi" value="{{ $buku->tinggi ?? '-' }}"
                                 disabled>
                             @error('tinggi')

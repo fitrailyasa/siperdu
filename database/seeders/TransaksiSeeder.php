@@ -16,6 +16,7 @@ class TransaksiSeeder extends Seeder
         $transaksis = [
             [
                 'kode_pinjam' => 'asd123', 
+                'buku_id' => 1,
                 'peminjam' => 'Siswa 1', 
                 'petugas_pinjam' => 'Admin', 
                 'petugas_kembali' => 'Admin', 
@@ -27,6 +28,7 @@ class TransaksiSeeder extends Seeder
             ],
             [
                 'kode_pinjam' => 'asd123', 
+                'buku_id' => 2,
                 'peminjam' => 'Siswa 2', 
                 'petugas_pinjam' => 'Admin', 
                 'petugas_kembali' => 'Admin', 

@@ -25,10 +25,13 @@
                 <div class="row">
                     <div class="col-md-4">
                         <div class="mb-3">
-                            <label class="form-label">Kode Pinjam</label>
-                            <input type="text" class="form-control @error('kode_pinjam') is-invalid @enderror"
-                                placeholder="kode_pinjam" value="{{ $transaksi->kode_pinjam }}" name="kode_pinjam"
-                                id="kode_pinjam" required>
+                            <label class="form-label">Buku</label>
+                            <select class="form-select @error('buku_id') is-invalid @enderror" name="buku_id"
+                                id="buku_id">
+                                @foreach ($bukus as $buku)
+                                    <option value="{{ $buku->id }}" @if ($transaksi->buku_id == $buku->id) selected @endif>
+                                @endforeach
+                            </select>
                             @error('kode_pinjam')
                                 <div class="alert alert-danger">{{ $message }}</div>
                             @enderror

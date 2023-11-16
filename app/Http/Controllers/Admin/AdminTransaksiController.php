@@ -17,13 +17,14 @@ class AdminTransaksiController extends Controller
 
     public function create()
     {
-        return view('admin.transaksi.create');
+        $bukus = Buku::all();
+        return view('admin.transaksi.create', compact('bukus'));
     }
 
     public function store(Request $request)
     {
         $request->validate([
-            'kode_pinjam' => 'required|max:255', 
+            'buku_id' => 'required',
             'peminjam' => 'required|max:255', 
             'petugas_pinjam' => 'required|max:255', 
             'petugas_kembali' => 'required|max:255', 
@@ -33,6 +34,11 @@ class AdminTransaksiController extends Controller
             'tanggal_kembali' => 'required|max:255', 
             'tanggal_pengembalian' => 'required|max:255',
         ]);
+
+        $kode_pinjam = now()->format('YmdHis') . 'trnsks' . rand(1000, 9999);
+
+        // Add the generated kode_pinjam to the request data
+        $request->merge(['kode_pinjam' => $kode_pinjam]);
 
         Transaksi::create($request->all());
 
@@ -47,14 +53,15 @@ class AdminTransaksiController extends Controller
 
     public function edit($id)
     {
+        $bukus = Buku::all();
         $transaksi = Transaksi::findOrFail($id);
-        return view('admin.transaksi.update', compact('transaksi'));
+        return view('admin.transaksi.update', compact('transaksi', 'bukus'));
     }
 
     public function update(Request $request, $id)
     {
-        $request->validate([
-            'kode_pinjam' => 'required|max:255', 
+        $request->validate([ 
+            'buku_id' => 'required',
             'peminjam' => 'required|max:255', 
             'petugas_pinjam' => 'required|max:255', 
             'petugas_kembali' => 'required|max:255', 

@@ -23,10 +23,14 @@
                 <div class="row">
                     <div class="col-md-4">
                         <div class="mb-3">
-                            <label class="form-label">Kode Pinjam</label>
-                            <input type="text" class="form-control @error('kode_pinjam') is-invalid @enderror"
-                                placeholder="kode_pinjam" name="kode_pinjam" id="kode_pinjam" required>
-                            @error('kode_pinjam')
+                            <label class="form-label">Buku</label>
+                            <select class="form-select @error('buku_id') is-invalid @enderror" name="buku_id"
+                                id="buku_id">
+                                @foreach ($bukus as $buku)
+                                    <option value="{{ $buku->id }}">{{ $buku->judul }}</option>
+                                @endforeach
+                            </select>
+                            @error('buku_id')
                                 <div class="alert alert-danger">{{ $message }}</div>
                             @enderror
                         </div>
@@ -67,8 +71,10 @@
                     <div class="col-md-4">
                         <div class="mb-3">
                             <label class="form-label">Status</label>
-                            <input type="text" class="form-control @error('status') is-invalid @enderror"
-                                placeholder="status" name="status" id="status" required>
+                            <select class="form-select @error('status') is-invalid @enderror" name="status" id="status">
+                                <option value="dikembalikan">Dikembalikan</option>
+                                <option value="dipinjam">Dipinjam</option>
+                            </select>
                             @error('status')
                                 <div class="alert alert-danger">{{ $message }}</div>
                             @enderror

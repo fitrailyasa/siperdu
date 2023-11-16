@@ -27,7 +27,7 @@
                         <div class="mb-3">
                             <label class="form-label">Judul</label>
                             <input type="text" class="form-control @error('judul') is-invalid @enderror"
-                                placeholder="Judul" name="judul" id="judul" value="{{ $buku->judul }}" required>
+                                placeholder="Judul" name="judul" id="judul" value="{{ $buku->judul }}" enabled>
                             @error('judul')
                                 <div class="alert alert-danger">{{ $message }}</div>
                             @enderror
@@ -37,7 +37,7 @@
                         <div class="mb-3">
                             <label class="form-label">Tanggal</label>
                             <input type="date" class="form-control @error('tanggal') is-invalid @enderror"
-                                placeholder="Tanggal" name="tanggal" id="tanggal" value="{{ $buku->tanggal }}" required>
+                                placeholder="Tanggal" name="tanggal" id="tanggal" value="{{ $buku->tanggal }}" enabled>
                             @error('tanggal')
                                 <div class="alert alert-danger">{{ $message }}</div>
                             @enderror
@@ -50,7 +50,7 @@
                         <div class="mb-3">
                             <label class="form-label">Sampul</label>
                             <input type="file" class="form-control @error('sampul') is-invalid @enderror"
-                                placeholder="Sampul" name="sampul" id="sampul" value="{{ $buku->sampul }}" required>
+                                placeholder="Sampul" name="sampul" id="sampul" value="{{ $buku->sampul }}" enabled>
                             @error('sampul')
                                 <div class="alert alert-danger">{{ $message }}</div>
                             @enderror
@@ -60,7 +60,7 @@
                         <div class="mb-3">
                             <label class="form-label">Penulis</label>
                             <input type="text" class="form-control @error('penulis') is-invalid @enderror"
-                                placeholder="Penulis" name="penulis" id="penulis" value="{{ $buku->penulis }}" required>
+                                placeholder="Penulis" name="penulis" id="penulis" value="{{ $buku->penulis }}" enabled>
                             @error('penulis')
                                 <div class="alert alert-danger">{{ $message }}</div>
                             @enderror
@@ -71,7 +71,7 @@
                             <label class="form-label">Tahun Terbit</label>
                             <input type="text" class="form-control @error('tahun_terbit') is-invalid @enderror"
                                 placeholder="Tahun Terbit" name="tahun_terbit" id="tahun_terbit"
-                                value="{{ $buku->tahun_terbit }}" required>
+                                value="{{ $buku->tahun_terbit }}" enabled>
                             @error('tahun_terbit')
                                 <div class="alert alert-danger">{{ $message }}</div>
                             @enderror
@@ -85,7 +85,7 @@
                             <label class="form-label">Tempat Terbit</label>
                             <input type="text" class="form-control @error('tempat_terbit') is-invalid @enderror"
                                 placeholder="Tempat Terbit" name="tempat_terbit" id="tempat_terbit"
-                                value="{{ $buku->tempat_terbit }}" required>
+                                value="{{ $buku->tempat_terbit }}" enabled>
                             @error('tempat_terbit')
                                 <div class="alert alert-danger">{{ $message }}</div>
                             @enderror
@@ -96,7 +96,7 @@
                             <label class="form-label">Sumber Buku</label>
                             <input type="text" class="form-control @error('sumber_buku') is-invalid @enderror"
                                 placeholder="Sumber Buku" name="sumber_buku" id="sumber_buku"
-                                value="{{ $buku->sumber_buku }}" required>
+                                value="{{ $buku->sumber_buku }}" enabled>
                             @error('sumber_buku')
                                 <div class="alert alert-danger">{{ $message }}</div>
                             @enderror
@@ -110,7 +110,7 @@
                             <label class="form-label">Keterangan</label>
                             <input type="text" class="form-control @error('keterangan') is-invalid @enderror"
                                 placeholder="Keterangan" name="keterangan" id="keterangan" value="{{ $buku->keterangan }}"
-                                required>
+                                enabled>
                             @error('keterangan')
                                 <div class="alert alert-danger">{{ $message }}</div>
                             @enderror
@@ -171,7 +171,7 @@
                         <div class="mb-3">
                             <label class="form-label">Stok</label>
                             <input type="number" class="form-control @error('stok') is-invalid @enderror"
-                                placeholder="Stok" name="stok" id="stok" value="{{ $buku->stok }}" required>
+                                placeholder="Stok" name="stok" id="stok" value="{{ $buku->stok }}" enabled>
                             @error('stok')
                                 <div class="alert alert-danger">{{ $message }}</div>
                             @enderror
@@ -182,7 +182,7 @@
                             <label class="form-label">Halaman</label>
                             <input type="number" class="form-control @error('halaman') is-invalid @enderror"
                                 placeholder="Halaman" name="halaman" id="halaman" value="{{ $buku->halaman }}"
-                                required>
+                                enabled>
                             @error('halaman')
                                 <div class="alert alert-danger">{{ $message }}</div>
                             @enderror
@@ -196,7 +196,7 @@
                             <label class="form-label">Tinggi</label>
                             <input type="number" class="form-control @error('tinggi') is-invalid @enderror"
                                 placeholder="Tinggi" name="tinggi" id="tinggi" value="{{ $buku->tinggi }}"
-                                required>
+                                enabled>
                             @error('tinggi')
                                 <div class="alert alert-danger">{{ $message }}</div>
                             @enderror
@@ -206,7 +206,7 @@
                         <div class="mb-3">
                             <label class="form-label">DDC</label>
                             <input type="text" class="form-control @error('ddc') is-invalid @enderror"
-                                placeholder="DDC" name="ddc" id="ddc" value="{{ $buku->ddc }}" required>
+                                placeholder="DDC" name="ddc" id="ddc" value="{{ $buku->ddc }}" enabled>
                             @error('ddc')
                                 <div class="alert alert-danger">{{ $message }}</div>
                             @enderror
@@ -216,7 +216,7 @@
                         <div class="mb-3">
                             <label class="form-label">ISBN</label>
                             <input type="text" class="form-control @error('isbn') is-invalid @enderror"
-                                placeholder="ISBN" name="isbn" id="isbn" value="{{ $buku->isbn }}" required>
+                                placeholder="ISBN" name="isbn" id="isbn" value="{{ $buku->isbn }}" enabled>
                             @error('isbn')
                                 <div class="alert alert-danger">{{ $message }}</div>
                             @enderror

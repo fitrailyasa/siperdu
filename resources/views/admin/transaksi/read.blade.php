@@ -19,11 +19,11 @@
                 <div class="row">
                     <div class="col-md-4">
                         <div class="mb-3">
-                            <label class="form-label">Kode Pinjam</label>
-                            <input type="text" class="form-control @error('kode_pinjam') is-invalid @enderror"
-                                placeholder="kode_pinjam" value="{{ $transaksi->kode_pinjam ?? '-' }}" name="kode_pinjam"
-                                id="kode_pinjam" disabled>
-                            @error('kode_pinjam')
+                            <label class="form-label">Buku</label>
+                            <input type="text" class="form-control @error('buku') is-invalid @enderror"
+                                placeholder="buku" value="{{ $transaksi->buku ?? '-' }}" name="buku" id="buku"
+                                disabled>
+                            @error('buku')
                                 <div class="alert alert-danger">{{ $message }}</div>
                             @enderror
                         </div>

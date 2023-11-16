@@ -27,4 +27,8 @@ class Buku extends Model
         return $this->belongsTo(Rak::class);
     }
 
+    public function transaksi()
+    {
+        return $this->hasMany(Transaksi::class);
+    }
 }

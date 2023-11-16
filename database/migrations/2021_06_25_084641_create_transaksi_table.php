@@ -16,6 +16,8 @@ class CreateTransaksiTable extends Migration
         Schema::create('transaksi', function (Blueprint $table) {
             $table->id();
             $table->string('kode_pinjam');
+            $table->unsignedBigInteger('buku_id');
+            $table->foreign('buku_id')->references('id')->on('buku');
             $table->string('peminjam');
             $table->string('petugas_pinjam')->nullable();
             $table->string('petugas_kembali')->nullable();

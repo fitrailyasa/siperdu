@@ -36,8 +36,13 @@ class KoleksiController extends Controller
         $query = $request->input('query');
 
         $bukus = Buku::where('judul', 'like', "%$query%")
-                    ->orWhere('penulis', 'like', "%$query%")
-                    ->get();
+            ->orWhere('penulis', 'like', "%$query%")
+            ->orWhere('isbn', 'like', "%$query%")
+            ->orWhere('ddc', 'like', "%$query%")
+            ->orWhere('sumber_buku', 'like', "%$query%")
+            ->orWhere('tempat_terbit', 'like', "%$query%")
+            ->orWhere('tahun_terbit', 'like', "%$query%")
+            ->get();
 
         return view('client.search', compact('bukus'));
     }
