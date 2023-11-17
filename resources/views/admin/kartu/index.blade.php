@@ -46,7 +46,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($kartus as $kartu)
+                        @foreach ($kartus->where('roles_id', 2) as $kartu)
                             <tr>
                                 <td>{{ $loop->iteration }}</td>
                                 <td>

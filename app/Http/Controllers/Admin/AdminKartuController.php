@@ -47,12 +47,11 @@ class AdminKartuController extends Controller
         $kartu->update(
             [
                 'nama' => $request->nama,
-                'email' => $request->email,
                 'nisn' => $request->nisn,
                 'roles_id' => $request->roles_id
             ]
         );
-        if (auth()->kartu()->roles_id == 1) {
+        if (auth()->user()->roles_id == 1) {
             return redirect('admin/kartu')->with('sukses', 'Berhasil Edit Data!');
         }
     }
