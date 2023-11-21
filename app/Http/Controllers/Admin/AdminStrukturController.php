@@ -30,6 +30,7 @@ class AdminStrukturController extends Controller
             
             $gambar->move(public_path('assets/struktur/'), $nama_file);
         }
+        return redirect('admin/struktur/1/edit');
 
     }
 }

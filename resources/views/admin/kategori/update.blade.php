@@ -50,7 +50,7 @@
                     <div class="col-md-12">
                         <div class="mb-3">
                             <input type="file" class="form-control @error('gambar') is-invalid @enderror"
-                                placeholder="gambar" name="gambar" id="gambar" value="{{ $kategori->gambar }}" required>
+                                placeholder="gambar" name="gambar" id="gambar" value="{{ $kategori->gambar }}" enabled>
                             @error('gambar')
                                 <div class="alert alert-danger">{{ $message }}</div>
                             @enderror

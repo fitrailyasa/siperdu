@@ -6,7 +6,7 @@
 
 @section('backlink')
     @if (auth()->user()->roles_id == 1)
-        <a href="{{ route('admin.kartu') }}"><i class="fa small pr-1 fa-arrow-left text-dark"></i></a>
+        <a href="{{ route('admin.kartu.index') }}"><i class="fa small pr-1 fa-arrow-left text-dark"></i></a>
     @endif
 @endsection
 
