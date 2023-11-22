@@ -25,13 +25,13 @@ class AdminTransaksiController extends Controller
     {
         $request->validate([
             'buku_id' => 'required',
-            'peminjam' => 'required|max:255', 
-            'petugas_pinjam' => 'required|max:255', 
-            'petugas_kembali' => 'required|max:255', 
-            'status' => 'required|max:255', 
-            'denda' => 'required', 
-            'tanggal_pinjam' => 'required|max:255', 
-            'tanggal_kembali' => 'required|max:255', 
+            'peminjam' => 'required|max:255',
+            'petugas_pinjam' => 'required|max:255',
+            'petugas_kembali' => 'required|max:255',
+            'status' => 'required|max:255',
+            'denda' => 'required',
+            'tanggal_pinjam' => 'required|max:255',
+            'tanggal_kembali' => 'required|max:255',
             'tanggal_pengembalian' => 'required|max:255',
         ]);
 
@@ -41,6 +41,10 @@ class AdminTransaksiController extends Controller
         $request->merge(['kode_pinjam' => $kode_pinjam]);
 
         Transaksi::create($request->all());
+
+        $buku = Buku::findOrFail($request->buku_id);
+        $buku->stok -= 1; // Kurangi stok buku
+        $buku->save();
 
         return redirect()->route('admin.transaksi.index')->with('sukses', 'Berhasil Tambah Data!');
     }
@@ -60,15 +64,15 @@ class AdminTransaksiController extends Controller
 
     public function update(Request $request, $id)
     {
-        $request->validate([ 
+        $request->validate([
             'buku_id' => 'required',
-            'peminjam' => 'required|max:255', 
-            'petugas_pinjam' => 'required|max:255', 
-            'petugas_kembali' => 'required|max:255', 
-            'status' => 'required|max:255', 
-            'denda' => 'required', 
-            'tanggal_pinjam' => 'required|max:255', 
-            'tanggal_kembali' => 'required|max:255', 
+            'peminjam' => 'required|max:255',
+            'petugas_pinjam' => 'required|max:255',
+            'petugas_kembali' => 'required|max:255',
+            'status' => 'required|max:255',
+            'denda' => 'required',
+            'tanggal_pinjam' => 'required|max:255',
+            'tanggal_kembali' => 'required|max:255',
             'tanggal_pengembalian' => 'required|max:255',
         ]);
 
@@ -80,7 +84,7 @@ class AdminTransaksiController extends Controller
 
     public function destroy($id)
     {
-        $transaksi = Peminjaman::findOrFail($id);
+        $transaksi = Transaksi::findOrFail($id);
         $transaksi->delete();
 
         return redirect()->route('admin.transaksi.index')->with('sukses', 'Berhasil Hapus Data!');
