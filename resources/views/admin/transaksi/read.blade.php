@@ -19,17 +19,6 @@
                 <div class="row">
                     <div class="col-md-4">
                         <div class="mb-3">
-                            <label class="form-label">Buku</label>
-                            <input type="text" class="form-control @error('buku') is-invalid @enderror"
-                                placeholder="buku" value="{{ $transaksi->buku ?? '-' }}" name="buku" id="buku"
-                                disabled>
-                            @error('buku')
-                                <div class="alert alert-danger">{{ $message }}</div>
-                            @enderror
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="mb-3">
                             <label class="form-label">Nama Peminjam</label>
                             <input type="text" class="form-control @error('peminjam') is-invalid @enderror"
                                 placeholder="peminjam" value="{{ $transaksi->peminjam ?? '-' }}" name="peminjam"
@@ -50,9 +39,6 @@
                             @enderror
                         </div>
                     </div>
-                </div>
-
-                <div class="row">
                     <div class="col-md-4">
                         <div class="mb-3">
                             <label class="form-label">Petugas Kembali</label>
@@ -64,6 +50,30 @@
                             @enderror
                         </div>
                     </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="mb-3">
+                            <label class="form-label">Buku</label>
+                            <input type="text" class="form-control @error('buku') is-invalid @enderror"
+                                placeholder="buku" value="{{ $transaksi->buku->judul ?? '-' }}" name="buku" id="buku" disabled>
+                            @error('buku')
+                                <div class="alert alert-danger">{{ $message }}</div>
+                            @enderror
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="mb-3">
+                            <label class="form-label">Kategori</label>
+                            <input type="text" class="form-control @error('kategori') is-invalid @enderror"
+                                placeholder="kategori" value="{{ $transaksi->kategori ?? '-' }}" name="kategori" id="kategori"
+                                disabled>
+                            @error('kategori')
+                                <div class="alert alert-danger">{{ $message }}</div>
+                            @enderror
+                        </div>
+                    </div>
                     <div class="col-md-4">
                         <div class="mb-3">
                             <label class="form-label">Status</label>
@@ -71,17 +81,6 @@
                                 placeholder="status" value="{{ $transaksi->status ?? '-' }}" name="status" id="status"
                                 disabled>
                             @error('status')
-                                <div class="alert alert-danger">{{ $message }}</div>
-                            @enderror
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="mb-3">
-                            <label class="form-label">Denda</label>
-                            <input type="text" class="form-control @error('denda') is-invalid @enderror"
-                                placeholder="denda" value="{{ $transaksi->denda ?? '-' }}" name="denda" id="denda"
-                                disabled>
-                            @error('denda')
                                 <div class="alert alert-danger">{{ $message }}</div>
                             @enderror
                         </div>
@@ -125,12 +124,23 @@
                 </div>
 
                 <div class="row">
-                    <div class="text-right">
+                    <div class="col-md-4">
+                        <div class="mb-3">
+                            <label class="form-label">Denda</label>
+                            <input type="text" class="form-control @error('denda') is-invalid @enderror"
+                                placeholder="denda" value="{{ $transaksi->denda ?? '-' }}" name="denda" id="denda"
+                                disabled>
+                            @error('denda')
+                                <div class="alert alert-danger">{{ $message }}</div>
+                            @enderror
+                        </div>
+                    </div>
+                    <div class="col-md-8 text-right">
                         <a href="{{ route('admin.transaksi.edit', $transaksi->id) ?? '-' }}"
                             class="btn btn-primary">Edit</a>
                     </div>
                 </div>
-                </form>
+
             </div>
         </div>
     </div>
