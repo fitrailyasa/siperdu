@@ -106,7 +106,7 @@ class AdminTransaksiController extends Controller
         }
 
         $request['tanggal_pengembalian'] = $request->has('tanggal_pengembalian') ? $request->tanggal_pengembalian : null;
-        $request['kategori'] = $request->input('kategori'); // Menambahkan kategori ke request data
+        $request['kategori'] = $request->input('kategori');
 
         // Mengubah nilai denda menjadi null jika nilainya adalah 0
         $request['denda'] = ($request->input('denda') == 0) ? null : $request->input('denda');
@@ -140,6 +140,10 @@ class AdminTransaksiController extends Controller
             // Tambahkan stok buku yang terkait
             $buku = $transaksi->buku;
             $buku->stok += 1;
+            $buku->save();
+        } elseif($transaksi->status == 'Sudah Dikembalikan'){
+            $buku = $transaksi->buku;
+            $buku->stok -= 1;
             $buku->save();
         }
 

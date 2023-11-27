@@ -19,6 +19,41 @@
                 <div class="row">
                     <div class="col-md-4">
                         <div class="mb-3">
+                            <label class="form-label">Buku</label>
+                            <input type="text" class="form-control @error('buku') is-invalid @enderror"
+                                placeholder="buku" value="{{ $transaksi->buku->judul ?? '-' }}" name="buku" id="buku" disabled>
+                            @error('buku')
+                                <div class="alert alert-danger">{{ $message }}</div>
+                            @enderror
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="mb-3">
+                            <label class="form-label">Kategori</label>
+                            <input type="text" class="form-control @error('kategori') is-invalid @enderror"
+                                placeholder="kategori" value="{{ $transaksi->kategori ?? '-' }}" name="kategori" id="kategori"
+                                disabled>
+                            @error('kategori')
+                                <div class="alert alert-danger">{{ $message }}</div>
+                            @enderror
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="mb-3">
+                            <label class="form-label">Status</label>
+                            <input type="text" class="form-control @error('status') is-invalid @enderror"
+                                placeholder="status" value="{{ $transaksi->status ?? '-' }}" name="status" id="status"
+                                disabled>
+                            @error('status')
+                                <div class="alert alert-danger">{{ $message }}</div>
+                            @enderror
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="mb-3">
                             <label class="form-label">Nama Peminjam</label>
                             <input type="text" class="form-control @error('peminjam') is-invalid @enderror"
                                 placeholder="peminjam" value="{{ $transaksi->peminjam ?? '-' }}" name="peminjam"
@@ -46,41 +81,6 @@
                                 placeholder="petugas_kembali" value="{{ $transaksi->petugas_kembali ?? '-' }}"
                                 name="petugas_kembali" id="petugas_kembali" disabled>
                             @error('petugas_kembali')
-                                <div class="alert alert-danger">{{ $message }}</div>
-                            @enderror
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="mb-3">
-                            <label class="form-label">Buku</label>
-                            <input type="text" class="form-control @error('buku') is-invalid @enderror"
-                                placeholder="buku" value="{{ $transaksi->buku->judul ?? '-' }}" name="buku" id="buku" disabled>
-                            @error('buku')
-                                <div class="alert alert-danger">{{ $message }}</div>
-                            @enderror
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="mb-3">
-                            <label class="form-label">Kategori</label>
-                            <input type="text" class="form-control @error('kategori') is-invalid @enderror"
-                                placeholder="kategori" value="{{ $transaksi->kategori ?? '-' }}" name="kategori" id="kategori"
-                                disabled>
-                            @error('kategori')
-                                <div class="alert alert-danger">{{ $message }}</div>
-                            @enderror
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="mb-3">
-                            <label class="form-label">Status</label>
-                            <input type="text" class="form-control @error('status') is-invalid @enderror"
-                                placeholder="status" value="{{ $transaksi->status ?? '-' }}" name="status" id="status"
-                                disabled>
-                            @error('status')
                                 <div class="alert alert-danger">{{ $message }}</div>
                             @enderror
                         </div>

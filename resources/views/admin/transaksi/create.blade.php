@@ -23,39 +23,6 @@
                 <div class="row">
                     <div class="col-md-4">
                         <div class="mb-3">
-                            <label class="form-label">Nama Peminjam</label>
-                            <input type="text" class="form-control @error('peminjam') is-invalid @enderror"
-                                placeholder="Nama Peminjam" name="peminjam" id="peminjam" value="{{ old('peminjam') }}" required>
-                            @error('peminjam')
-                                <div class="alert alert-danger">{{ $message }}</div>
-                            @enderror
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="mb-3">
-                            <label class="form-label">Petugas Pinjam</label>
-                            <input type="text" class="form-control @error('petugas_pinjam') is-invalid @enderror"
-                                placeholder="Nama Petugas Peminjam" name="petugas_pinjam" id="petugas_pinjam" value="{{ old('petugas_pinjam') }}" required>
-                            @error('petugas_pinjam')
-                                <div class="alert alert-danger">{{ $message }}</div>
-                            @enderror
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="mb-3">
-                            <label class="form-label">Petugas Kembali</label>
-                            <input type="text" class="form-control @error('petugas_kembali') is-invalid @enderror"
-                                placeholder="Nama Petugas Kembali" name="petugas_kembali" id="petugas_kembali" value="{{ old('petugas_kembali') }}">
-                            @error('petugas_kembali')
-                                <div class="alert alert-danger">{{ $message }}</div>
-                            @enderror
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="mb-3">
                             <label class="form-label">Buku</label>
                             <select class="form-select @error('buku_id') is-invalid @enderror" name="buku_id"
                                 id="buku_id">
@@ -89,6 +56,39 @@
                                 <option value="Sudah Dikembalikan" {{ old('status') == 'Sudah Dikembalikan' ? 'selected' : '' }}>Sudah Dikembalikan</option>
                             </select>
                             @error('status')
+                                <div class="alert alert-danger">{{ $message }}</div>
+                            @enderror
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="mb-3">
+                            <label class="form-label">Nama Peminjam</label>
+                            <input type="text" class="form-control @error('peminjam') is-invalid @enderror"
+                                placeholder="Nama Peminjam" name="peminjam" id="peminjam" value="{{ old('peminjam') }}" required>
+                            @error('peminjam')
+                                <div class="alert alert-danger">{{ $message }}</div>
+                            @enderror
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="mb-3">
+                            <label class="form-label">Petugas Pinjam</label>
+                            <input type="text" class="form-control @error('petugas_pinjam') is-invalid @enderror"
+                                placeholder="Nama Petugas Peminjam" name="petugas_pinjam" id="petugas_pinjam" value="{{ old('petugas_pinjam') }}" required>
+                            @error('petugas_pinjam')
+                                <div class="alert alert-danger">{{ $message }}</div>
+                            @enderror
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="mb-3">
+                            <label class="form-label">Petugas Kembali</label>
+                            <input type="text" class="form-control @error('petugas_kembali') is-invalid @enderror"
+                                placeholder="Nama Petugas Kembali" name="petugas_kembali" id="petugas_kembali" value="{{ old('petugas_kembali') }}">
+                            @error('petugas_kembali')
                                 <div class="alert alert-danger">{{ $message }}</div>
                             @enderror
                         </div>
