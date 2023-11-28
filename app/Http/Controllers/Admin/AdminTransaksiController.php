@@ -44,7 +44,7 @@ class AdminTransaksiController extends Controller
         }
 
         $request['tanggal_pengembalian'] = $request->has('tanggal_pengembalian') ? $request->tanggal_pengembalian : null;
-        $request['kategori'] = $request->input('kategori'); // Menambahkan kategori ke request data
+        $request['jenis'] = $request->input('jenis'); // Menambahkan jenis ke request data
 
         // Mengubah nilai denda menjadi null jika nilainya adalah 0
         $request['denda'] = ($request->input('denda') == 0) ? null : $request->input('denda');
@@ -106,7 +106,7 @@ class AdminTransaksiController extends Controller
         }
 
         $request['tanggal_pengembalian'] = $request->has('tanggal_pengembalian') ? $request->tanggal_pengembalian : null;
-        $request['kategori'] = $request->input('kategori');
+        $request['jenis'] = $request->input('jenis');
 
         // Mengubah nilai denda menjadi null jika nilainya adalah 0
         $request['denda'] = ($request->input('denda') == 0) ? null : $request->input('denda');

@@ -41,13 +41,13 @@
 
                     <div class="col-md-4">
                         <div class="mb-3">
-                            <label class="form-label">Kategori</label>
-                            <select class="form-select @error('kategori') is-invalid @enderror" name="kategori" id="kategori">
+                            <label class="form-label">Jenis</label>
+                            <select class="form-select @error('jenis') is-invalid @enderror" name="jenis" id="jenis">
                                 <option value="Koleksi" {{ $transaksi->status == 'Koleksi' ? 'selected' : '' }}>Koleksi</option>
                                 <option value="Pelajaran 1 Semester" {{ $transaksi->status == 'Pelajaran 1 Semester' ? 'selected' : '' }}>Pelajaran 1 Semester</option>
                                 <option value="Pelajaran 2 Semester" {{ $transaksi->status == 'Pelajaran 2 Semester' ? 'selected' : '' }}>Pelajaran 2 Semester</option>
                             </select>
-                            @error('kategori')
+                            @error('jenis')
                                  <div class="alert alert-danger">{{ $message }}</div>
                             @enderror
                         </div>
@@ -163,6 +163,7 @@
         </div>
     </div>
     <!-- ./Edit transaksi -->
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script>
         $(document).ready(function () {
@@ -176,19 +177,19 @@
             }
 
             // Panggil fungsi saat elemen #status berubah
-            $('#status').on('change', function () {
-                setReadonlyStatus();
-            });
+                $('#status').on('change', function () {
+                    setReadonlyStatus();
+                });
 
             // Fungsi untuk menghitung tanggal kembali
             function hitungTanggalKembali() {
-                var kategori = $('#kategori').val();
+                var jenis = $('#jenis').val();
                 var tanggalPinjam = $('#tanggal_pinjam').val();
 
-                if (kategori && tanggalPinjam) {
+                if (jenis && tanggalPinjam) {
                     var jumlahHari;
 
-                    switch (kategori) {
+                    switch (jenis) {
                         case 'Koleksi':
                             jumlahHari = 3;
                             break;
@@ -200,7 +201,7 @@
                             // Tambahkan 1 tahun untuk Pelajaran 2 Semester
                             jumlahHari = 365;
                             break;
-                        // Tambahkan case untuk kategori lain jika diperlukan
+                        // Tambahkan case untuk jenis lain jika diperlukan
                         default:
                             jumlahHari = 0;
                             break;
@@ -219,8 +220,8 @@
                 }
             }
 
-            // Panggil fungsi hitungTanggalKembali saat elemen #kategori berubah
-            $('#kategori').on('change', hitungTanggalKembali);
+            // Panggil fungsi hitungTanggalKembali saat elemen #jenis berubah
+            $('#jenis').on('change', hitungTanggalKembali);
 
             // Panggil fungsi hitungTanggalKembali saat elemen #tanggal_pinjam berubah
             $('#tanggal_pinjam').on('change', hitungTanggalKembali);

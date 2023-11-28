@@ -29,11 +29,11 @@
                     </div>
                     <div class="col-md-4">
                         <div class="mb-3">
-                            <label class="form-label">Kategori</label>
-                            <input type="text" class="form-control @error('kategori') is-invalid @enderror"
-                                placeholder="kategori" value="{{ $transaksi->kategori ?? '-' }}" name="kategori" id="kategori"
+                            <label class="form-label">Jenis</label>
+                            <input type="text" class="form-control @error('jenis') is-invalid @enderror"
+                                placeholder="jenis" value="{{ $transaksi->jenis ?? '-' }}" name="jenis" id="jenis"
                                 disabled>
-                            @error('kategori')
+                            @error('jenis')
                                 <div class="alert alert-danger">{{ $message }}</div>
                             @enderror
                         </div>

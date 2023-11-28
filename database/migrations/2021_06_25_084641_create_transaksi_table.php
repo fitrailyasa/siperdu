@@ -22,6 +22,7 @@ class CreateTransaksiTable extends Migration
             $table->string('petugas_pinjam')->nullable();
             $table->string('petugas_kembali')->nullable();
             $table->string('status');
+            $table->string('jenis')->nullable();
             $table->integer('denda')->nullable();
             $table->date('tanggal_pinjam')->nullable();
             $table->date('tanggal_kembali')->nullable();

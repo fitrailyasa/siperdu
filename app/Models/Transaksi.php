@@ -11,7 +11,7 @@ class Transaksi extends Model
     use HasFactory;
 
     protected $table = 'transaksi';
-    protected $fillable = ['kode_pinjam', 'buku_id', 'peminjam', 'petugas_pinjam', 'petugas_kembali', 'status', 'denda', 'tanggal_pinjam', 'tanggal_kembali', 'tanggal_pengembalian', 'kategori']; // Menambahkan 'kategori' ke fillable
+    protected $fillable = ['kode_pinjam', 'buku_id', 'peminjam', 'petugas_pinjam', 'petugas_kembali', 'status', 'denda', 'tanggal_pinjam', 'tanggal_kembali', 'tanggal_pengembalian', 'jenis']; // Menambahkan 'kategori' ke fillable
 
     // Accessor
     public function getDendaAttribute($value)
