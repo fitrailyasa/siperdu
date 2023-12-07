@@ -120,8 +120,6 @@
                                 @foreach ($penerbits as $penerbit)
                                     <option value="{{ $penerbit->id }}">{{ $penerbit->nama }}</option>
                                 @endforeach
-
-                                @endfor
                                 @php
                                     $seenIds = [];
                                 @endphp

@@ -53,7 +53,7 @@
                                             Hapus
                                         </a>
                                         <!-- Modal -->
-                                        <div class="modal fade bd-example-modal-sm{{ $buku->id }}" tabindex="-1"
+                                        <div class="modal fade bd-example-modal-sm{{ $penerbit->id }}" tabindex="-1"
                                             role="dialog" aria-hidden="">
                                             <div class="modal-dialog ">
                                                 <div class="modal-content">
@@ -64,7 +64,7 @@
                                                     </div>
                                                     <div class="modal-body">Apakah anda yakin ingin menghapus data?</div>
                                                     <div class="modal-footer">
-                                                        <form action="{{ route('admin.penerbit.destroy', $buku->id) }}"
+                                                        <form action="{{ route('admin.penerbit.destroy', $penerbit->id) }}"
                                                             method="POST">
                                                             @method('DELETE')
                                                             @csrf

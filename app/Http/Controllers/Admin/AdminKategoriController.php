@@ -63,6 +63,8 @@ class AdminKategoriController extends Controller
             $gambar->move('../public/assets/images/kategori/', $nama_file);
         }
 
+        $kategori->update($request->all());
+
         return redirect()->route('admin.kategori.index')->with('sukses', 'Berhasil Edit Data!');
     }
 
