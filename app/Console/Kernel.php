@@ -10,9 +10,16 @@ class Kernel extends ConsoleKernel
     /**
      * Define the application's command schedule.
      */
+
+    protected $commands = [
+        Commands\UpdateDenda::class,
+    ];
+
     protected function schedule(Schedule $schedule): void
     {
-        // $schedule->command('inspire')->hourly();
+        $schedule->command('update:denda')
+            ->daily()
+            ->timezone('Asia/Jakarta');
     }
 
     /**
