@@ -54,7 +54,7 @@ class AdminUserController extends Controller
             ]
         );
         
-        User::create([
+        $user = User::create([
             'nama' => $request->nama,
             'email' => $request->email,
             'nisn' => $request->nisn,

@@ -126,6 +126,17 @@
                                         {{ $buku->penerbit_id == $penerbit->id ? 'selected' : '' }}>
                                         {{ $penerbit->nama }}</option>
                                 @endforeach
+                                @php
+                                    $seenIds = [];
+                                @endphp
+                                @foreach ($bukus as $buku)
+                                    @if ($buku->penerbit_id !== null && !in_array($buku->penerbit_id, $seenIds))
+                                        <option value="{{ $buku->penerbit_id }}">{{ $buku->penerbit_id }}</option>
+                                        @php
+                                            $seenIds[] = $buku->penerbit_id;
+                                        @endphp
+                                    @endif
+                                @endforeach
                             </select>
                             @error('penerbit_id')
                                 <div class="alert alert-danger">{{ $message }}</div>
@@ -195,8 +206,7 @@
                         <div class="mb-3">
                             <label class="form-label">Tinggi</label>
                             <input type="number" class="form-control @error('tinggi') is-invalid @enderror"
-                                placeholder="Tinggi" name="tinggi" id="tinggi" value="{{ $buku->tinggi }}"
-                                enabled>
+                                placeholder="Tinggi" name="tinggi" id="tinggi" value="{{ $buku->tinggi }}" enabled>
                             @error('tinggi')
                                 <div class="alert alert-danger">{{ $message }}</div>
                             @enderror

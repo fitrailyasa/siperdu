@@ -30,7 +30,7 @@ class AdminKategoriController extends Controller
             $nama_file = time() . '_' . $gambar->getClientOriginalName();
             $kategori->gambar = $nama_file;
             $kategori->update();
-            $gambar->storeAs('public/assets/images/kategori/', $nama_file);
+            $gambar->move('../public/assets/images/kategori/', $nama_file);
         }
 
         return redirect()->route('admin.kategori.index')->with('sukses', 'Berhasil Tambah Data!');
@@ -60,7 +60,7 @@ class AdminKategoriController extends Controller
             $nama_file = time() . '_' . $gambar->getClientOriginalName();
             $kategori->gambar = $nama_file;
             $kategori->update();
-            $gambar->storeAs('public/assets/images/kategori/', $nama_file);
+            $gambar->move('../public/assets/images/kategori/', $nama_file);
         }
 
         return redirect()->route('admin.kategori.index')->with('sukses', 'Berhasil Edit Data!');

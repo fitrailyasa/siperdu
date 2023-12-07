@@ -54,7 +54,7 @@
                 <div class="mb-3 row">
                     <label class="col-sm-3 col-form-label">Password</label>
                     <div class="col-sm-9">
-                        <input type="text" class="form-control @error('password') is-invalid @enderror"
+                        <input type="password" class="form-control @error('password') is-invalid @enderror"
                             placeholder="password" name="password" id="password" required>
                         @error('password')
                             <div class="alert alert-danger">{{ $message }}</div>
@@ -65,10 +65,9 @@
                     <label class="col-sm-3 col-form-label">Role</label>
                     <div class="col-sm-9">
                         <select class="col-sm-12 col-form-label rounded-2" name="roles_id" id="roles_id" required>
-                            {{-- @if (auth()->user()->roles_id == 1)
-                                <option selected value="1">Admin</option>
-                            @endif --}}
-                            <option value="3">Anggota</option>
+                            <option value="" selected>Pilih</option>
+                            <option value="1">Admin</option>
+                            <option value="2">Anggota</option>
                         </select>
                     </div>
                 </div>

@@ -116,6 +116,12 @@
                             <label class="form-label">Penerbit</label>
                             <select class="form-control @error('penerbit_id') is-invalid @enderror" name="penerbit_id"
                                 id="penerbit_id">
+                                <option value="">Pilih Penerbit</option>
+                                @foreach ($penerbits as $penerbit)
+                                    <option value="{{ $penerbit->id }}">{{ $penerbit->nama }}</option>
+                                @endforeach
+
+                                @endfor
                                 @php
                                     $seenIds = [];
                                 @endphp

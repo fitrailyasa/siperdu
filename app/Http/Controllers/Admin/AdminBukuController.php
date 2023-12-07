@@ -28,6 +28,7 @@ class AdminBukuController extends Controller
 
     public function store(Request $request)
     {
+        
         $request->validate([
             'judul' => 'required|max:255',
             'tanggal' => 'required|date',
@@ -46,15 +47,17 @@ class AdminBukuController extends Controller
             'isbn' => 'required|max:255',
         ]);
 
+        $buku = Buku::create($request->all());
+
         if ($request->hasFile('sampul')) {
             $sampul = $request->file('sampul');
             $nama_file = time() . '_' . $sampul->getClientOriginalName();
             $buku->sampul = $nama_file;
             $buku->update();  // Update the model to save the 'sampul' field
-            $sampul->storeAs('public/assets/images/buku/', $nama_file);
+            $sampul->move('../public/assets/images/buku/', $nama_file);
         }
 
-        $buku->create($request->all());
+        $buku->save($request->all());
 
         return redirect()->route('admin.buku.index')->with('sukses', 'Berhasil Tambah Data!');
     }
@@ -69,10 +72,11 @@ class AdminBukuController extends Controller
     public function edit($id)
     {
         $buku = Buku::findOrFail($id);
+        $bukus = Buku::all();
         $penerbits = Penerbit::all();
         $raks = Rak::all();
         $kategoris = Kategori::all();
-        return view('admin.buku.update', compact('buku', 'penerbits', 'raks', 'kategoris'));
+        return view('admin.buku.update', compact('buku', 'bukus', 'penerbits', 'raks', 'kategoris'));
     }
 
     public function update(Request $request, $id)
@@ -101,7 +105,7 @@ class AdminBukuController extends Controller
             $nama_file = time() . '_' . $sampul->getClientOriginalName();
             $buku->sampul = $nama_file;
             $buku->update();
-            $sampul->storeAs('public/assets/images/buku/', $nama_file);
+            $sampul->move('../public/assets/images/buku/', $nama_file);
         }
         
         $buku->update($request->all());

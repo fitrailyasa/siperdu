@@ -28,7 +28,7 @@ class AdminStrukturController extends Controller
             
             $struktur->save();
             
-            $gambar->storeAs('public/assets/struktur/', $nama_file);
+            $gambar->move('../public/assets/struktur/', $nama_file);
         }
         return redirect('admin/struktur/1/edit');
 

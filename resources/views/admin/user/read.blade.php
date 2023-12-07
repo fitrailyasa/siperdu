@@ -50,24 +50,10 @@
                     </div>
                 </div>
                 <div class="mb-3 row">
-                    <label class="col-sm-3 col-form-label">Password</label>
-                    <div class="col-sm-9">
-                        <input type="text" class="form-control" placeholder="password" name="password" id="password"
-                            value="{{ $user->password ?? '-' }}" disabled>
-                    </div>
-                </div>
-                <div class="mb-3 row">
                     <label class="col-sm-3 col-form-label">Roles</label>
                     <div class="col-sm-9">
-                        @if ($user->roles_id == 1)
-                            <input class="form-control" name="roles_id" id="roles_id" value="Admin" disabled>
-                        @elseif($user->roles_id == 2)
-                            <input class="form-control" name="roles_id" id="roles_id" value="Admin" disabled>
-                        @elseif($user->roles_id == 3)
-                            <input class="form-control" name="roles_id" id="roles_id" value="Member" disabled>
-                        @elseif($user->roles_id == 99)
-                            <input class="form-control" name="roles_id" id="roles_id" value="Guest" disabled>
-                        @endif
+                        <input type="text" class="form-control" placeholder="roles" name="roles" id="roles"
+                            value="{{ $user->roles->roles ?? '-' }}" disabled>
                     </div>
                 </div>
                 <div class="row">

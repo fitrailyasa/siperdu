@@ -77,8 +77,9 @@
                     <label class="col-sm-3 col-form-label">Roles ID</label>
                     <div class="col-sm-9">
                         <select class="col-sm-12 col-form-label rounded-2" name="roles_id" id="roles_id" enabled>
-                            <option value="1">Admin</option>
-                            <option value="2">Anggota</option>
+                            <option value="" selected>Pilih</option>
+                            <option value="1" {{ $user->roles_id == 1 ? 'selected' : '' }}>Admin</option>
+                            <option value="2" {{ $user->roles_id == 2 ? 'selected' : '' }}>Anggota</option>
                         </select>
                     </div>
                 </div>

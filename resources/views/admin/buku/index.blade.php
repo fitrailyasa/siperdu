@@ -32,7 +32,7 @@
                                 <td>{{ $loop->iteration }}</td>
                                 <td>{{ $buku->judul ?? '-' }}</td>
                                 <td>{{ $buku->penulis ?? '-' }}</td>
-                                <td>{{ $buku->penerbit_id ?? '-' }}</td>
+                                <td>{{ $buku->penerbit->nama ?? ($buku->penerbit_id ?? '-') }}</td>
                                 <td class="manage-row">
                                     @if (auth()->user()->roles_id == 1)
                                         <a href="{{ route('admin.buku.show', $buku->id) }}"
