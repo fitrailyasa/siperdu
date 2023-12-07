@@ -51,7 +51,7 @@ class AdminBukuController extends Controller
             $nama_file = time() . '_' . $sampul->getClientOriginalName();
             $buku->sampul = $nama_file;
             $buku->update();  // Update the model to save the 'sampul' field
-            $sampul->move(public_path('assets/images/buku/'), $nama_file);
+            $sampul->storeAs('public/assets/images/buku/', $nama_file);
         }
 
         $buku->create($request->all());
@@ -101,7 +101,7 @@ class AdminBukuController extends Controller
             $nama_file = time() . '_' . $sampul->getClientOriginalName();
             $buku->sampul = $nama_file;
             $buku->update();
-            $sampul->move(public_path('assets/images/buku/'), $nama_file);
+            $sampul->storeAs('public/assets/images/buku/', $nama_file);
         }
         
         $buku->update($request->all());
